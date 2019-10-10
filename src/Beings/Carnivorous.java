@@ -61,7 +61,7 @@ public class Carnivorous extends Animals{
             return false;
         }
         if(currentHp < maxHp * 0.7){
-
+            pursuit(unit);
         }
         if(currentHp >= maxHp * 0.8 && age >= 5 && age <= 6 && !goal){
             reproduction(unit);

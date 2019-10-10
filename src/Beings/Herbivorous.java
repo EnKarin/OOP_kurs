@@ -39,7 +39,6 @@ public class Herbivorous extends Animals {
     }
 
     private void escape(ArrayDeque<Beings> unit) { //побег
-        live = true;
         int distance;
         double sin, cos;
         Carnivorous enemy = enemy(unit);
