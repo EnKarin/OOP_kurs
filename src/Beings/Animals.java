@@ -7,8 +7,8 @@ abstract class Animals extends Beings{
     boolean live;
     boolean goal;
 
-    Animals(double currentHp, double maxHp, int x, int y, int speed){
-        super(currentHp, maxHp, x, y);
+    Animals(double maxHp, int x, int y, int speed){
+        super(maxHp, x, y);
         this.speed = speed;
     }
 }

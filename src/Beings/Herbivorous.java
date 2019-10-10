@@ -4,8 +4,8 @@ import java.util.ArrayDeque;
 
 public class Herbivorous extends Animals{
 
-    Herbivorous(int currentHp, int maxHp, int x, int y, int speed){
-        super(currentHp, maxHp, x, y, speed);
+    Herbivorous(int maxHp, int x, int y, int speed){
+        super(maxHp, x, y, speed);
     }
 
     void reproduction(ArrayDeque<Beings> unit){ //размножение травоядных
@@ -17,12 +17,15 @@ public class Herbivorous extends Animals{
             cos = Math.abs(x - mam.x) / distance;
             x += speed * cos;
             y += speed * sin;
+            if(x == mam.x && y == mam.y){
+                goal = true;
+            }
         }
-        else{
+        else if(enemy(unit) != null){
             escape(unit);
             return;
         }
-        unit.add(new Herbivorous((int)(0.1 * maxHp), (int)(maxHp * 0.8 + rand.nextInt((int)Math.abs(maxHp
+        unit.add(new Herbivorous((int)(maxHp * 0.8 + rand.nextInt((int)Math.abs(maxHp
                 - mam.maxHp))), x + 15, y + 15, (int)(speed * 0.8 + rand.nextInt((Math.abs(speed
                 - mam.speed))))));
         full -= 15;

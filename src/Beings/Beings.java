@@ -11,8 +11,8 @@ public abstract class Beings {
     Random rand = new Random();
     int x, y;
 
-    Beings(double currentHp, double maxHp, int x, int y){
-     this.currentHp = currentHp;
+    Beings(double maxHp, int x, int y){
+     this.currentHp = maxHp * 0.1;
      this.maxHp = maxHp;
      this.x = x;
      this.y = y;

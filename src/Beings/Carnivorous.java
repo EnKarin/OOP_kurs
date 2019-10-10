@@ -4,8 +4,8 @@ import java.util.ArrayDeque;
 
 public class Carnivorous extends Animals{
 
-    Carnivorous(int currentHp, int maxHp, int x, int y, int speed){
-        super(currentHp, maxHp, x, y, speed);
+    Carnivorous(int maxHp, int x, int y, int speed){
+        super(maxHp, x, y, speed);
     }
 
     void reproduction(ArrayDeque<Beings> unit){ //размножение хищников
@@ -19,7 +19,7 @@ public class Carnivorous extends Animals{
             x += speed * cos;
             y += speed * sin;
         }
-        unit.add(new Carnivorous((int)(0.1 * maxHp), (int)(maxHp * 0.8 + rand.nextInt((int)Math.abs(maxHp
+        unit.add(new Carnivorous((int)(maxHp * 0.8 + rand.nextInt((int)Math.abs(maxHp
                 - mam.maxHp))), x + 15, y + 15, (int)(speed * 0.8 + rand.nextInt((Math.abs(speed
                 - mam.speed))))));
         full -= 15;
