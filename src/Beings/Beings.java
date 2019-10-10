@@ -17,6 +17,7 @@ abstract class Beings {
      this.x = x;
      this.y = y;
      rand.setSeed(0);
+     male = rand.nextBoolean();
     }
 
     Beings search(ArrayDeque<Beings> unit, Class currentClass){ //поиск партнера
@@ -34,6 +35,19 @@ abstract class Beings {
     }
 
     abstract boolean live(ArrayDeque<Beings> unit);
+
+    public int getX(){
+        return x;
+    }
+
+    public int getY(){
+        return y;
+    }
+
+    public double getCurrentHp(){
+        return currentHp;
+    }
+
 }
 
 abstract class Animals extends Beings{
