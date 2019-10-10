@@ -3,7 +3,7 @@ package Beings;
 import java.util.ArrayDeque;
 import java.util.Random;
 
-abstract class Beings {
+public abstract class Beings {
 
     double age = 0;
     double currentHp, maxHp;
