@@ -29,11 +29,13 @@ public class Carnivorous extends Animals{
 
     private Herbivorous hunger(ArrayDeque<Beings> unit){ //поиск еды
         Herbivorous temp = (Herbivorous) search(unit, Herbivorous.class);
-        int distance = (int)Math.sqrt(Math.pow(x - temp.x, 2) + Math.pow(y - temp.y, 2));
-        if(distance <= 300){
-            return temp;
+        if(temp != null) {
+            int distance = (int) Math.sqrt(Math.pow(x - temp.x, 2) + Math.pow(y - temp.y, 2));
+            if (distance <= 300) {
+                return temp;
+            }
         }
-        else return null;
+        return null;
     }
 
     private void pursuit(ArrayDeque<Beings> unit){ //преследование добычи

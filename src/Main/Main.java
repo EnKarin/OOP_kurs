@@ -12,6 +12,7 @@ public class Main extends JFrame{
     int x = 3500, y = 3500;
     static ArrayDeque<Beings> units;
     static Beings temp;
+    Color red = new Color(0xFF1109);
 
     Main(){
         setBounds(0, 0, 1370, 727);
@@ -22,19 +23,19 @@ public class Main extends JFrame{
             @Override
             public void keyPressed(KeyEvent e) {
                 super.keyTyped(e);
-                if(e.getKeyCode() == KeyEvent.VK_RIGHT && x > 0){
+                if(e.getKeyCode() == KeyEvent.VK_RIGHT && x >= 0){
                     x--;
                     repaint();
                 }
-                else if(e.getKeyCode() == KeyEvent.VK_LEFT && x < 5630){
+                else if(e.getKeyCode() == KeyEvent.VK_LEFT && x <= 5630){
                     x++;
                     repaint();
                 }
-                else if(e.getKeyCode() == KeyEvent.VK_DOWN && y > 0){
+                else if(e.getKeyCode() == KeyEvent.VK_DOWN && y >= 0){
                     y--;
                     repaint();
                 }
-                else if(e.getKeyCode() == KeyEvent.VK_UP && y < 6273){
+                else if(e.getKeyCode() == KeyEvent.VK_UP && y <= 6273){
                     y++;
                     repaint();
                 }
@@ -48,13 +49,38 @@ public class Main extends JFrame{
             }
         });
 
-        repaint(16, 0, 0, getWidth(), getHeight());
+        while (true){
+            repaint();
+            try{
+                Thread.sleep(16);
+            }
+            catch (Exception e){
+                break;
+            }
+        }
     }
 
     @Override
     public void paint(Graphics g) {
         super.paint(g);
-        for(Iterator<Beings> it = units.iterator(); it.hasNext(); temp = it.next()){
+        if(x == 0){
+            g.setColor(red);
+            g.drawLine(1, 0, 1, getHeight());
+        }
+        else if(x == 5630){
+            g.setColor(red);
+            g.drawLine(getWidth() - 1, 0, getWidth() - 1, getHeight());
+        }
+        if(y == 0){
+            g.setColor(red);
+            g.drawLine(0, 1, getWidth(), 1);
+        }
+        else if(y == 6273){
+            g.setColor(red);
+            g.drawLine(0, getHeight() - 1 ,getWidth(), getHeight() - 1);
+        }
+        for(Iterator<Beings> it = units.iterator(); it.hasNext();){
+            temp = it.next();
             if(!temp.live(units)){
                 it.remove();
             }
@@ -84,7 +110,7 @@ public class Main extends JFrame{
 
                     }
                 }
-                g.fillOval(temp.getX(), temp.getY(), (int)temp.getCurrentHp(), (int)temp.getCurrentHp());
+                g.fillOval(temp.getX() + x, temp.getY() + y, (int)temp.getCurrentHp(), (int)temp.getCurrentHp());
             }
         }
     }
@@ -93,14 +119,14 @@ public class Main extends JFrame{
         Random rand = new Random();
         rand.setSeed(2);
         units = new ArrayDeque<Beings>();
-        for(int i = 0; i < 6; i++){
+        for(int i = 0; i < 150; i++){
             units.add(new Plants(rand.nextInt(50), rand.nextInt(7000), rand.nextInt(7000)));
         }
-        for(int i = 0; i < 4; i++){
+        for(int i = 0; i < 70; i++){
             units.add(new Herbivorous(rand.nextInt(200), rand.nextInt(7000), rand.nextInt(7000),
                     rand.nextInt() * 2 / Integer.MAX_VALUE));
         }
-        for(int i = 0; i < 2; i++){
+        for(int i = 0; i < 50; i++){
             units.add(new Carnivorous(rand.nextInt(200), rand.nextInt(7000), rand.nextInt(7000),
                     rand.nextInt() * 3));
         }

@@ -32,7 +32,7 @@ public class Herbivorous extends Animals {
 
     private Carnivorous enemy(ArrayDeque<Beings> unit) { //проверка есть ли опасность
         Carnivorous temp = (Carnivorous) search(unit, Carnivorous.class);
-        if ((int) Math.sqrt(Math.pow(x - temp.x, 2) + Math.pow(y - temp.y, 2)) <= 300 && temp != null) {
+        if (temp != null && (int) Math.sqrt(Math.pow(x - temp.x, 2) + Math.pow(y - temp.y, 2)) <= 300) {
             return temp;
         }
         else return null;
