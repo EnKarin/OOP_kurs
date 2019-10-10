@@ -36,6 +36,10 @@ public abstract class Beings {
 
     public abstract boolean live(ArrayDeque<Beings> unit);
 
+    public boolean isMale(){
+        return male;
+    }
+
     public int getX(){
         return x;
     }
