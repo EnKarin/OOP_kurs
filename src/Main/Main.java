@@ -60,14 +60,31 @@ public class Main extends JFrame{
             }
             else {
                 if(temp.getClass().equals(Plants.class)){
-                    if()
+                    if(temp.isMale()){
+                        g.setColor(new Color(50, 177, 24));
+                    }
+                    else{
+                        g.setColor(new Color(156, 255, 17, 221));
+                    }
                 }
                 else if(temp.getClass().equals(Herbivorous.class)){
-                    if()
+                    if(temp.isMale()){
+                        g.setColor(new Color(0x216D89));
+                    }
+                    else{
+                        g.setColor(new Color(0x85247385, true));
+                    }
                 }
                 else {
-                    if()
+                    if(temp.isMale()){
+                        g.setColor(new Color(0x7C1923));
+                    }
+                    else{
+                        g.setColor(new Color(0xAE7A282D, true));
+
+                    }
                 }
+                g.fillOval(temp.getX(), temp.getY(), (int)temp.getCurrentHp(), (int)temp.getCurrentHp());
             }
         }
     }
