@@ -34,7 +34,7 @@ public abstract class Beings {
         return searching;
     }
 
-    abstract boolean live(ArrayDeque<Beings> unit);
+    public abstract boolean live(ArrayDeque<Beings> unit);
 
     public int getX(){
         return x;
