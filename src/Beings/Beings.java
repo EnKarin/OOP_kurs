@@ -2,6 +2,7 @@ package Beings;
 
 import java.util.ArrayDeque;
 import java.util.Random;
+import java.util.Set;
 
 public abstract class Beings {
 
@@ -20,7 +21,7 @@ public abstract class Beings {
      male = rand.nextBoolean();
     }
 
-    Beings search(ArrayDeque<Beings> unit, Class currentClass){ //поиск партнера
+    Beings search(Set<Beings> unit, Class currentClass){ //поиск партнера
         boolean m = currentClass.equals(Plants.class);
         int delta = Integer.MAX_VALUE;
         Beings searching = null;
@@ -34,7 +35,7 @@ public abstract class Beings {
         return searching;
     }
 
-    public abstract boolean live(ArrayDeque<Beings> unit);
+    public abstract boolean live(Set<Beings> unit);
 
     void check(){
         if(x < 0)

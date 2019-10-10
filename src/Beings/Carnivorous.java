@@ -1,6 +1,6 @@
 package Beings;
 
-import java.util.ArrayDeque;
+import java.util.Set;
 
 public class Carnivorous extends Animals{
 
@@ -8,7 +8,7 @@ public class Carnivorous extends Animals{
         super(maxHp, x, y, speed);
     }
 
-    void reproduction(ArrayDeque<Beings> unit){ //размножение хищников
+    void reproduction(Set<Beings> unit){ //размножение хищников
         double sin, cos;
         Carnivorous mam = (Carnivorous) search(unit, Carnivorous.class);
         if(mam != null) {
@@ -27,7 +27,7 @@ public class Carnivorous extends Animals{
         }
     }
 
-    private Herbivorous hunger(ArrayDeque<Beings> unit){ //поиск еды
+    private Herbivorous hunger(Set<Beings> unit){ //поиск еды
         Herbivorous temp = (Herbivorous) search(unit, Herbivorous.class);
         if(temp != null) {
             int distance = (int) Math.sqrt(Math.pow(x - temp.x, 2) + Math.pow(y - temp.y, 2));
@@ -38,7 +38,7 @@ public class Carnivorous extends Animals{
         return null;
     }
 
-    private void pursuit(ArrayDeque<Beings> unit){ //преследование добычи
+    private void pursuit(Set<Beings> unit){ //преследование добычи
         Herbivorous hunger = hunger(unit);
         if(hunger != null) {
             int distance;
@@ -56,7 +56,7 @@ public class Carnivorous extends Animals{
         }
     }
 
-    public boolean live(ArrayDeque<Beings> unit){
+    public boolean live(Set<Beings> unit){
         check();
         currentHp -= 0.001;
         age += 0.002;

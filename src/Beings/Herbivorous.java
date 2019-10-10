@@ -1,6 +1,7 @@
 package Beings;
 
 import java.util.ArrayDeque;
+import java.util.Set;
 
 public class Herbivorous extends Animals {
 
@@ -8,7 +9,7 @@ public class Herbivorous extends Animals {
         super(maxHp, x, y, speed);
     }
 
-    void reproduction(ArrayDeque<Beings> unit) { //размножение травоядных
+    void reproduction(Set<Beings> unit) { //размножение травоядных
         double sin, cos;
         Herbivorous mam = (Herbivorous) search(unit, Herbivorous.class);
         if (enemy(unit) == null && mam != null) {
@@ -30,7 +31,7 @@ public class Herbivorous extends Animals {
         }
     }
 
-    private Carnivorous enemy(ArrayDeque<Beings> unit) { //проверка есть ли опасность
+    private Carnivorous enemy(Set<Beings> unit) { //проверка есть ли опасность
         Carnivorous temp = (Carnivorous) search(unit, Carnivorous.class);
         if (temp != null && (int) Math.sqrt(Math.pow(x - temp.x, 2) + Math.pow(y - temp.y, 2)) <= 300) {
             return temp;
@@ -38,7 +39,7 @@ public class Herbivorous extends Animals {
         else return null;
     }
 
-    private void escape(ArrayDeque<Beings> unit) { //побег
+    private void escape(Set<Beings> unit) { //побег
         int distance;
         double sin, cos;
         Carnivorous enemy = enemy(unit);
@@ -53,7 +54,7 @@ public class Herbivorous extends Animals {
         }
     }
 
-    private void hunger(ArrayDeque<Beings> unit){ //поиск еды
+    private void hunger(Set<Beings> unit){ //поиск еды
         Plants temp = (Plants) search(unit, Plants.class);
         if(temp != null) {
             int distance = (int) Math.sqrt(Math.pow(x - temp.x, 2) + Math.pow(y - temp.y, 2));
@@ -69,7 +70,7 @@ public class Herbivorous extends Animals {
         }
     }
 
-    public boolean live(ArrayDeque<Beings> unit){
+    public boolean live(Set<Beings> unit){
         check();
         currentHp -= 0.001;
         age += 0.002;
