@@ -2,64 +2,55 @@ package Beings;
 
 import java.util.ArrayDeque;
 
-public class Herbivorous extends Animals{
+public class Herbivorous extends Animals {
 
-    Herbivorous(int maxHp, int x, int y, int speed){
+    public Herbivorous(int maxHp, int x, int y, int speed) {
         super(maxHp, x, y, speed);
     }
 
-    void reproduction(ArrayDeque<Beings> unit){ //размножение травоядных
+    void reproduction(ArrayDeque<Beings> unit) { //размножение травоядных
         double sin, cos;
         Herbivorous mam = (Herbivorous) search(unit, Herbivorous.class);
-        if(enemy(unit) == null && mam != null) {
+        if (enemy(unit) == null && mam != null) {
             int distance = (int) Math.sqrt(Math.pow(x - mam.x, 2) + Math.pow(y - mam.y, 2));
             sin = Math.abs(y - mam.y) / distance;
             cos = Math.abs(x - mam.x) / distance;
             x += speed * cos;
             y += speed * sin;
-            if(x == mam.x && y == mam.y){
+            if (x == mam.x && y == mam.y) {
+                full -= 15;
                 goal = true;
+                unit.add(new Herbivorous((int) (maxHp * 0.8 + rand.nextInt((int) Math.abs(maxHp
+                        - mam.maxHp))), x + 15, y + 15, (int) (speed * 0.8 + rand.nextInt((Math.abs(speed
+                        - mam.speed))))));
             }
-        }
-        else if(enemy(unit) != null){
+        } else if (enemy(unit) != null) {
             escape(unit);
-            return;
         }
-        unit.add(new Herbivorous((int)(maxHp * 0.8 + rand.nextInt((int)Math.abs(maxHp
-                - mam.maxHp))), x + 15, y + 15, (int)(speed * 0.8 + rand.nextInt((Math.abs(speed
-                - mam.speed))))));
-        full -= 15;
-        mam.full -= 15;
     }
 
-    private Carnivorous enemy(ArrayDeque<Beings> unit){ //проверка есть ли опасность
+    private Carnivorous enemy(ArrayDeque<Beings> unit) { //проверка есть ли опасность
         Carnivorous temp = (Carnivorous) search(unit, Carnivorous.class);
-        int distance = (int)Math.sqrt(Math.pow(x - temp.x, 2) + Math.pow(y - temp.y, 2));
-        if(distance <= 300){
+        int distance = (int) Math.sqrt(Math.pow(x - temp.x, 2) + Math.pow(y - temp.y, 2));
+        if (distance <= 300) {
             return temp;
-        }
-        else return null;
+        } else return null;
     }
 
-    private boolean escape(ArrayDeque<Beings> unit){ //побег
+    private boolean escape(ArrayDeque<Beings> unit) { //побег
         int distance;
         double sin, cos;
         Carnivorous enemy = enemy(unit);
-        if(enemy != null) {
-            do {
-                distance = (int) Math.sqrt(Math.pow(x - enemy.x, 2) + Math.pow(y - enemy.y, 2));
-                sin = Math.abs(y - enemy.y) / distance;
-                cos = Math.abs(x - enemy.x) / distance;
-                x -= speed * cos;
-                y -= speed * sin;
-                currentHp -= 3;
-            } while ((enemy = enemy(unit)) != null && currentHp > 0);
-            if(currentHp > 0){
-                return true;
-            }
-            else return false;
+        distance = (int) Math.sqrt(Math.pow(x - enemy.x, 2) + Math.pow(y - enemy.y, 2));
+        sin = Math.abs(y - enemy.y) / distance;
+        cos = Math.abs(x - enemy.x) / distance;
+        x -= speed * cos;
+        y -= speed * sin;
+        currentHp -= 3;
+        if (currentHp > 0) {
+            return true;
         }
-        return true;
+        else return false;
     }
 
     boolean live(ArrayDeque<Beings> unit){

@@ -4,7 +4,7 @@ import java.util.ArrayDeque;
 
 public class Plants extends Beings{
 
-    Plants(double maxHp, int x, int y){
+    public Plants(double maxHp, int x, int y){
         super(maxHp, x, y);
     }
 

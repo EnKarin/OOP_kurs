@@ -4,7 +4,7 @@ import java.util.ArrayDeque;
 
 public class Carnivorous extends Animals{
 
-    Carnivorous(int maxHp, int x, int y, int speed){
+    public Carnivorous(int maxHp, int x, int y, int speed){
         super(maxHp, x, y, speed);
     }
 
