@@ -11,19 +11,20 @@ public class Carnivorous extends Animals{
     void reproduction(ArrayDeque<Beings> unit){ //размножение хищников
         double sin, cos;
         Carnivorous mam = (Carnivorous) search(unit, Carnivorous.class);
-        int distance;
-        while(x != mam.x && y != mam.y){
-            distance = (int)Math.sqrt(Math.pow(x - mam.x, 2) + Math.pow(y - mam.y, 2));
+        if(mam != null) {
+            int distance = (int) Math.sqrt(Math.pow(x - mam.x, 2) + Math.pow(y - mam.y, 2));
             sin = Math.abs(y - mam.y) / distance;
             cos = Math.abs(x - mam.x) / distance;
             x += speed * cos;
             y += speed * sin;
+            if (Math.abs(x - mam.x) <= 3 && Math.abs(y - mam.y) <= 3) {
+                currentHp -= maxHp * 0.15;
+                goal = true;
+                unit.add(new Carnivorous((int) (maxHp * 0.8 + rand.nextInt((int) Math.abs(maxHp
+                        - mam.maxHp))), x + 15, y + 15, (int) (speed * 0.8 + rand.nextInt((int) (Math.abs(speed
+                        - mam.speed))))));
+            }
         }
-        unit.add(new Carnivorous((int)(maxHp * 0.8 + rand.nextInt((int)Math.abs(maxHp
-                - mam.maxHp))), x + 15, y + 15, (int)(speed * 0.8 + rand.nextInt((int)(Math.abs(speed
-                - mam.speed))))));
-        full -= 15;
-        mam.full -= 15;
     }
 
     private Herbivorous hunger(ArrayDeque<Beings> unit){ //поиск еды
@@ -35,38 +36,34 @@ public class Carnivorous extends Animals{
         else return null;
     }
 
-    private boolean pursuit(ArrayDeque<Beings> unit){ //преследование добычи
+    private void pursuit(ArrayDeque<Beings> unit){ //преследование добычи
         Herbivorous hunger = hunger(unit);
         if(hunger != null) {
             int distance;
             double sin, cos;
-            do {
-                distance = (int) Math.sqrt(Math.pow(x - hunger.x, 2) + Math.pow(y - hunger.y, 2));
-                sin = Math.abs(y - hunger.y) / distance;
-                cos = Math.abs(x - hunger.x) / distance;
-                x += speed * cos;
-                y += speed * sin;
-                currentHp -= 5;
-            } while (x == hunger.x && y == hunger.y && (hunger = hunger(unit)) != null && currentHp >= 20);
-            if(x == hunger.x && y == hunger.y){
-                return true;
+            distance = (int) Math.sqrt(Math.pow(x - hunger.x, 2) + Math.pow(y - hunger.y, 2));
+            sin = Math.abs(y - hunger.y) / distance;
+            cos = Math.abs(x - hunger.x) / distance;
+            x += 2 * speed * cos;
+            y += 2 * speed * sin;
+            currentHp -= 0.002;
+            if(Math.abs(x - hunger.x) <= 3 && Math.abs(y - hunger.y) <= 3){
+                currentHp += hunger.currentHp * 0.8;
+                hunger.currentHp = 0;
             }
         }
-        return false;
     }
 
-    boolean live(ArrayDeque<Beings> unit){
-        currentHp -= 0.008;
+    public boolean live(ArrayDeque<Beings> unit){
+        currentHp -= 0.001;
         age += 0.002;
         if(currentHp <= 0){
             return false;
         }
-        if(currentHp < maxHp * 0.5){
-            if(!pursuit(unit) && currentHp <= 0){
-                return false;
-            }
+        if(currentHp < maxHp * 0.7){
+
         }
-        if(currentHp >= maxHp * 0.8 && age >= 5 && age <= 6){
+        if(currentHp >= maxHp * 0.8 && age >= 5 && age <= 6 && !goal){
             reproduction(unit);
         }
         return true;

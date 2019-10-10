@@ -8,7 +8,7 @@ public class Plants extends Beings{
         super(maxHp, x, y);
     }
 
-    boolean live(ArrayDeque<Beings> unit){
+    public boolean live(ArrayDeque<Beings> unit){
         if(currentHp <= 0 ){
             return false;
         }

@@ -17,7 +17,7 @@ public class Herbivorous extends Animals {
             cos = Math.abs(x - mam.x) / distance;
             x += speed * cos;
             y += speed * sin;
-            if (x == mam.x && y == mam.y) {
+            if (Math.abs(x - mam.x) <= 3 && Math.abs(y - mam.y) <= 3) {
                 currentHp -= maxHp * 0.15;
                 goal = true;
                 unit.add(new Herbivorous((int) (maxHp * 0.8 + rand.nextInt((int) Math.abs(maxHp
@@ -56,19 +56,21 @@ public class Herbivorous extends Animals {
 
     private void hunger(ArrayDeque<Beings> unit){ //поиск еды
         Plants temp = (Plants) search(unit, Plants.class);
-        int distance = (int)Math.sqrt(Math.pow(x - temp.x, 2) + Math.pow(y - temp.y, 2));
-        double sin = Math.abs(y - temp.y) / distance;
-        double cos = Math.abs(x - temp.x) / distance;
-        x += speed * cos;
-        y += speed * sin;
-        currentHp -= 0.005;
-        if(Math.abs(x - temp.x) <= currentHp && Math.abs(y - temp.y) <= currentHp){
-            currentHp += temp.currentHp * 0.7;
-            temp.currentHp = 0;
+        if(temp != null) {
+            int distance = (int) Math.sqrt(Math.pow(x - temp.x, 2) + Math.pow(y - temp.y, 2));
+            double sin = Math.abs(y - temp.y) / distance;
+            double cos = Math.abs(x - temp.x) / distance;
+            x += speed * cos;
+            y += speed * sin;
+            currentHp -= 0.005;
+            if (Math.abs(x - temp.x) <= currentHp && Math.abs(y - temp.y) <= currentHp) {
+                currentHp += temp.currentHp * 0.7;
+                temp.currentHp = 0;
+            }
         }
     }
 
-    boolean live(ArrayDeque<Beings> unit){
+    public boolean live(ArrayDeque<Beings> unit){
         currentHp -= 0.001;
         age += 0.002;
         if(currentHp <= 0){
