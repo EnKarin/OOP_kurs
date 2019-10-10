@@ -9,6 +9,7 @@ public class Plants extends Beings{
     }
 
     public boolean live(ArrayDeque<Beings> unit){
+        check();
         if(currentHp <= 0 ){
             return false;
         }

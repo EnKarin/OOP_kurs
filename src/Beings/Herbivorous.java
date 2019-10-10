@@ -70,6 +70,7 @@ public class Herbivorous extends Animals {
     }
 
     public boolean live(ArrayDeque<Beings> unit){
+        check();
         currentHp -= 0.001;
         age += 0.002;
         if(currentHp <= 0){

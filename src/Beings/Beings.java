@@ -36,6 +36,17 @@ public abstract class Beings {
 
     public abstract boolean live(ArrayDeque<Beings> unit);
 
+    void check(){
+        if(x < 0)
+            x = 7000;
+        else if(x > 7000)
+            x = 0;
+        if(y < 0)
+            y = 7000;
+        else if(y > 7000)
+            y = 0;
+    }
+
     public boolean isMale(){
         return male;
     }
