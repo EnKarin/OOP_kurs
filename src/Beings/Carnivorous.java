@@ -4,7 +4,7 @@ import java.util.ArrayDeque;
 
 public class Carnivorous extends Animals{
 
-    public Carnivorous(int maxHp, int x, int y, int speed){
+    public Carnivorous(int maxHp, int x, int y, double speed){
         super(maxHp, x, y, speed);
     }
 
@@ -20,7 +20,7 @@ public class Carnivorous extends Animals{
             y += speed * sin;
         }
         unit.add(new Carnivorous((int)(maxHp * 0.8 + rand.nextInt((int)Math.abs(maxHp
-                - mam.maxHp))), x + 15, y + 15, (int)(speed * 0.8 + rand.nextInt((Math.abs(speed
+                - mam.maxHp))), x + 15, y + 15, (int)(speed * 0.8 + rand.nextInt((int)(Math.abs(speed
                 - mam.speed))))));
         full -= 15;
         mam.full -= 15;

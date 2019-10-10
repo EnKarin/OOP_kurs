@@ -4,7 +4,7 @@ import java.util.ArrayDeque;
 
 public class Herbivorous extends Animals {
 
-    public Herbivorous(int maxHp, int x, int y, int speed) {
+    public Herbivorous(int maxHp, int x, int y, double speed) {
         super(maxHp, x, y, speed);
     }
 
@@ -21,8 +21,8 @@ public class Herbivorous extends Animals {
                 full -= 15;
                 goal = true;
                 unit.add(new Herbivorous((int) (maxHp * 0.8 + rand.nextInt((int) Math.abs(maxHp
-                        - mam.maxHp))), x + 15, y + 15, (int) (speed * 0.8 + rand.nextInt((Math.abs(speed
-                        - mam.speed))))));
+                        - mam.maxHp))), x + 15, y + 15, speed * 0.8 + rand.nextInt((int)(Math.abs(speed
+                        - mam.speed)))));
             }
         } else if (enemy(unit) != null) {
             escape(unit);
@@ -31,10 +31,10 @@ public class Herbivorous extends Animals {
 
     private Carnivorous enemy(ArrayDeque<Beings> unit) { //проверка есть ли опасность
         Carnivorous temp = (Carnivorous) search(unit, Carnivorous.class);
-        int distance = (int) Math.sqrt(Math.pow(x - temp.x, 2) + Math.pow(y - temp.y, 2));
-        if (distance <= 300) {
+        if ((int) Math.sqrt(Math.pow(x - temp.x, 2) + Math.pow(y - temp.y, 2)) <= 300 && temp != null) {
             return temp;
-        } else return null;
+        }
+        else return null;
     }
 
     private boolean escape(ArrayDeque<Beings> unit) { //побег
@@ -47,7 +47,7 @@ public class Herbivorous extends Animals {
         x -= speed * cos;
         y -= speed * sin;
         currentHp -= 3;
-        if (currentHp > 0) {
+        if () {
             return true;
         }
         else return false;
