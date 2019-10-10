@@ -18,13 +18,14 @@ public class Herbivorous extends Animals {
             x += speed * cos;
             y += speed * sin;
             if (x == mam.x && y == mam.y) {
-                full -= 15;
+                currentHp -= maxHp * 0.15;
                 goal = true;
                 unit.add(new Herbivorous((int) (maxHp * 0.8 + rand.nextInt((int) Math.abs(maxHp
                         - mam.maxHp))), x + 15, y + 15, speed * 0.8 + rand.nextInt((int)(Math.abs(speed
                         - mam.speed)))));
             }
-        } else if (enemy(unit) != null) {
+        }
+        else if (enemy(unit) != null) {
             escape(unit);
         }
     }
@@ -37,37 +38,52 @@ public class Herbivorous extends Animals {
         else return null;
     }
 
-    private boolean escape(ArrayDeque<Beings> unit) { //побег
+    private void escape(ArrayDeque<Beings> unit) { //побег
+        live = true;
         int distance;
         double sin, cos;
         Carnivorous enemy = enemy(unit);
         distance = (int) Math.sqrt(Math.pow(x - enemy.x, 2) + Math.pow(y - enemy.y, 2));
         sin = Math.abs(y - enemy.y) / distance;
         cos = Math.abs(x - enemy.x) / distance;
-        x -= speed * cos;
-        y -= speed * sin;
-        currentHp -= 3;
-        if () {
-            return true;
+        x -= 2 * speed * cos;
+        y -= 2 * speed * sin;
+        currentHp -= 0.01;
+        if(Math.abs(x - enemy.x) <= 3 && Math.abs(y - enemy.y) <= 3){
+            live = false;
         }
-        else return false;
+    }
+
+    private void hunger(ArrayDeque<Beings> unit){ //поиск еды
+        Plants temp = (Plants) search(unit, Plants.class);
+        int distance = (int)Math.sqrt(Math.pow(x - temp.x, 2) + Math.pow(y - temp.y, 2));
+        double sin = Math.abs(y - temp.y) / distance;
+        double cos = Math.abs(x - temp.x) / distance;
+        x += speed * cos;
+        y += speed * sin;
+        currentHp -= 0.005;
+        if(Math.abs(x - temp.x) <= currentHp && Math.abs(y - temp.y) <= currentHp){
+            currentHp += temp.currentHp * 0.7;
+            temp.currentHp = 0;
+        }
     }
 
     boolean live(ArrayDeque<Beings> unit){
-        currentHp -= 0.005;
+        currentHp -= 0.001;
         age += 0.002;
         if(currentHp <= 0){
             return false;
         }
-        if(currentHp < maxHp * 0.5){
-            if(!escape(unit)){
-                return false;
-            }
+        else if(enemy(unit) != null){
+            escape(unit);
+            return live;
         }
-        if(currentHp >= maxHp * 0.8 && age >= 5 && age <= 6){
+        else if(currentHp < maxHp * 0.7){
+            hunger(unit);
+        }
+        else if(currentHp >= maxHp * 0.8 && age >= 5 && age <= 6 && !goal){
             reproduction(unit);
         }
         return true;
-
     }
 }

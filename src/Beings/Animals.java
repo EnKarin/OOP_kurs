@@ -3,9 +3,8 @@ package Beings;
 abstract class Animals extends Beings{
 
     double speed;
-    double full = 40;
-    boolean live;
-    boolean goal;
+    boolean live = false;
+    boolean goal = false;
 
     Animals(double maxHp, int x, int y, double speed){
         super(maxHp, x, y);
