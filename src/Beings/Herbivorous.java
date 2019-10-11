@@ -12,8 +12,8 @@ public class Herbivorous extends Animals {
         final Herbivorous mam = (Herbivorous) searchPartner(unit, Herbivorous.class);
         if (enemy(unit) == null && mam != null) {
             int distance = (int) Math.sqrt(Math.pow(x - mam.x, 2) + Math.pow(y - mam.y, 2));
-            final double sin = Math.abs(y - mam.y) / distance;
-            final double cos = Math.abs(x - mam.x) / distance;
+            final double sin = (mam.y - y) / distance;
+            final double cos = (mam.x - x) / distance;
             x += speed * cos;
             y += speed * sin;
             if (Math.abs(x - mam.x) <= 3 && Math.abs(y - mam.y) <= 3) {
@@ -57,10 +57,10 @@ public class Herbivorous extends Animals {
         Plants temp = (Plants) search(unit, Plants.class);
         if(temp != null) {
             final int distance = (int) Math.sqrt(Math.pow(x - temp.x, 2) + Math.pow(y - temp.y, 2));
-            final double sin = Math.abs(y - temp.y) / distance;
-            final double cos = Math.abs(x - temp.x) / distance;
-            x += speed * cos;
-            y += speed * sin;
+            final double sin = (temp.y - y) / distance;
+            final double cos = (temp.x - x) / distance;
+            x += 2 * speed * cos;
+            y += 2 * speed * sin;
             currentHp -= 0.005;
             if (Math.abs(x - temp.x) <= currentHp && Math.abs(y - temp.y) <= currentHp) {
                 currentHp += temp.currentHp * 0.7;
@@ -87,7 +87,7 @@ public class Herbivorous extends Animals {
         else if(currentHp < maxHp * 0.7){
             hunger(unit);
         }
-        else if(currentHp >= maxHp * 0.6 && age >= 0.5 && age <= 1 && !goal){
+        else if(currentHp >= maxHp * 0.6 && age >= 0.5 && age <= 1){
             reproduction(unit);
         }
         else {
