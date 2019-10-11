@@ -14,6 +14,9 @@ public class Plants extends Beings{
         if(currentHp <= 0 ){
             return false;
         }
+        if(new Random().nextInt((int)age + 1) == 5){
+            return false;
+        }
         final Plants dad = (Plants) searchPartner(unit, Plants.class);
         age += 0.002;
         if(currentHp < maxHp) {

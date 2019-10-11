@@ -18,7 +18,6 @@ public class Herbivorous extends Animals {
             y += speed * sin;
             if (Math.abs(x - mam.x) <= 3 && Math.abs(y - mam.y) <= 3) {
                 currentHp -= maxHp * 0.15;
-                goal = true;
                 unit.add(new Herbivorous(rand.nextBoolean(),(int)(maxHp * 0.8 + rand.nextInt((int) Math.abs(maxHp
                         - mam.maxHp) + 1)), (int)(x + 15), (int)(y + 15), speed * 0.8 + rand.nextInt((int)(Math.abs(speed
                         - mam.speed)) + 1)));
@@ -34,7 +33,8 @@ public class Herbivorous extends Animals {
 
     private Carnivorous enemy(Set<Beings> unit) { //проверка есть ли опасность
         final Carnivorous temp = (Carnivorous) search(unit, Carnivorous.class);
-        if (temp != null && (int) Math.sqrt(Math.pow(x - temp.x, 2) + Math.pow(y - temp.y, 2)) <= 300) {
+        if (temp != null && (int) Math.sqrt(Math.pow(x - temp.x, 2) + Math.pow(y - temp.y, 2)) <= 300
+                && temp.currentHp >= currentHp) {
             return temp;
         }
         else return null;
@@ -45,10 +45,10 @@ public class Herbivorous extends Animals {
         final int distance = (int) Math.sqrt(Math.pow(x - enemy.x, 2) + Math.pow(y - enemy.y, 2));
         final double sin = (enemy.y - y) / distance;
         final double cos = (enemy.x - x)/ distance;
-        x -= 2.1 * speed * cos;
-        y -= 2.1 * speed * sin;
+        x -= 2.3 * speed * cos;
+        y -= 2.3 * speed * sin;
         currentHp -= 0.01;
-        if(Math.abs(x - enemy.x) <= 3 && Math.abs(y - enemy.y) <= 3 && enemy.currentHp <= currentHp){
+        if(Math.abs(x - enemy.x) <= 3 && Math.abs(y - enemy.y) <= 3){
             live = false;
         }
     }
@@ -78,6 +78,9 @@ public class Herbivorous extends Animals {
         currentHp -= 0.01;
         age += 0.002;
         if(currentHp <= 0){
+            return false;
+        }
+        else if(rand.nextInt((int)age + 1) == 5){
             return false;
         }
         else if(enemy(unit) != null){
