@@ -11,7 +11,7 @@ import Beings.*;
 public class Main extends JFrame{
     int x = 0, y = 0;
     static Set<Beings> set = Collections.newSetFromMap(new ConcurrentHashMap<>());
-    Color red;
+    private final Color red;
 
     Main(){
         setBounds(0, 0, 1370, 727);

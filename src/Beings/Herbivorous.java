@@ -4,22 +4,21 @@ import java.util.Random;
 import java.util.Set;
 
 public class Herbivorous extends Animals {
-    Random rand = new Random();
+    final Random rand = new Random();
 
     public Herbivorous(boolean male, int maxHp, int x, int y, double speed) {
         super(male, maxHp, x, y, speed);
     }
 
     void reproduction(Set<Beings> unit) { //размножение травоядных
-        double sin, cos;
-        Herbivorous mam = (Herbivorous) searchPartner(unit, Herbivorous.class);
+        final Herbivorous mam = (Herbivorous) searchPartner(unit, Herbivorous.class);
         if (enemy(unit) == null && mam != null) {
             int distance = (int) Math.sqrt(Math.pow(x - mam.x, 2) + Math.pow(y - mam.y, 2));
-            sin = Math.abs(y - mam.y) / distance;
-            cos = Math.abs(x - mam.x) / distance;
+            final double sin = Math.abs(y - mam.y) / distance;
+            final double cos = Math.abs(x - mam.x) / distance;
             x += speed * cos;
             y += speed * sin;
-            if ((double)Math.abs(x - mam.x) <= 3 && (double)Math.abs(y - mam.y) <= 3) {
+            if (Math.abs(x - mam.x) <= 3 && Math.abs(y - mam.y) <= 3) {
                 currentHp -= maxHp * 0.15;
                 goal = true;
                 unit.add(new Herbivorous(rand.nextBoolean(),(int)(maxHp * 0.8 + rand.nextInt((int) Math.abs(maxHp
@@ -36,7 +35,7 @@ public class Herbivorous extends Animals {
     }
 
     private Carnivorous enemy(Set<Beings> unit) { //проверка есть ли опасность
-        Carnivorous temp = (Carnivorous) search(unit, Carnivorous.class);
+        final Carnivorous temp = (Carnivorous) search(unit, Carnivorous.class);
         if (temp != null && (int) Math.sqrt(Math.pow(x - temp.x, 2) + Math.pow(y - temp.y, 2)) <= 300) {
             return temp;
         }
@@ -44,16 +43,14 @@ public class Herbivorous extends Animals {
     }
 
     private void escape(Set<Beings> unit) { //побег
-        int distance;
-        double sin, cos;
-        Carnivorous enemy = enemy(unit);
-        distance = (int) Math.sqrt(Math.pow(x - enemy.x, 2) + Math.pow(y - enemy.y, 2));
-        sin = Math.abs(y - enemy.y) / distance;
-        cos = Math.abs(x - enemy.x) / distance;
+        final Carnivorous enemy = enemy(unit);
+        final int distance = (int) Math.sqrt(Math.pow(x - enemy.x, 2) + Math.pow(y - enemy.y, 2));
+        final double sin = Math.abs(y - enemy.y) / distance;
+        final double cos = Math.abs(x - enemy.x) / distance;
         x -= 2 * speed * cos;
         y -= 2 * speed * sin;
         currentHp -= 0.01;
-        if((double)Math.abs(x - enemy.x) <= 3 && (double)Math.abs(y - enemy.y) <= 3){
+        if(Math.abs(x - enemy.x) <= 3 && Math.abs(y - enemy.y) <= 3){
             live = false;
         }
     }
@@ -61,13 +58,13 @@ public class Herbivorous extends Animals {
     private void hunger(Set<Beings> unit){ //поиск еды
         Plants temp = (Plants) search(unit, Plants.class);
         if(temp != null) {
-            int distance = (int) Math.sqrt(Math.pow(x - temp.x, 2) + Math.pow(y - temp.y, 2));
-            double sin = (double)Math.abs(y - temp.y) / distance;
-            double cos = (double)Math.abs(x - temp.x) / distance;
+            final int distance = (int) Math.sqrt(Math.pow(x - temp.x, 2) + Math.pow(y - temp.y, 2));
+            final double sin = Math.abs(y - temp.y) / distance;
+            final double cos = Math.abs(x - temp.x) / distance;
             x += speed * cos;
             y += speed * sin;
             currentHp -= 0.005;
-            if ((double)Math.abs(x - temp.x) <= currentHp && (double)Math.abs(y - temp.y) <= currentHp) {
+            if (Math.abs(x - temp.x) <= currentHp && Math.abs(y - temp.y) <= currentHp) {
                 currentHp += temp.currentHp * 0.7;
                 temp.currentHp = 0;
             }

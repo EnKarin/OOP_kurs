@@ -16,8 +16,8 @@ abstract class Animals extends Beings {
     }
 
     void movement() {
-        double sin = new Random().nextInt(100) / 100;
-        double cos = new Random().nextInt(100) / 100;
+        final double sin = new Random().nextInt(100) / 100;
+        final double cos = new Random().nextInt(100) / 100;
         x += speed * cos;
         y += speed * sin;
     }
