@@ -34,7 +34,7 @@ public class Herbivorous extends Animals {
 
     private Carnivorous enemy(Set<Beings> unit) { //проверка есть ли опасность
         final Carnivorous temp = (Carnivorous) search(unit, Carnivorous.class);
-        if (temp != null && (int) Math.sqrt(Math.pow(x - temp.x, 2) + Math.pow(y - temp.y, 2)) <= 300) {
+        if (temp != null && (int) Math.sqrt(Math.pow(x - temp.x, 2) + Math.pow(y - temp.y, 2)) <= 500) {
             return temp;
         }
         else return null;
@@ -45,8 +45,8 @@ public class Herbivorous extends Animals {
         final int distance = (int) Math.sqrt(Math.pow(x - enemy.x, 2) + Math.pow(y - enemy.y, 2));
         final double sin = Math.abs(y - enemy.y) / distance;
         final double cos = Math.abs(x - enemy.x) / distance;
-        x -= 2 * speed * cos;
-        y -= 2 * speed * sin;
+        x += 2.1 * speed * -cos;
+        y += 2.1 * speed * -sin;
         currentHp -= 0.01;
         if(Math.abs(x - enemy.x) <= 3 && Math.abs(y - enemy.y) <= 3){
             live = false;
@@ -87,7 +87,7 @@ public class Herbivorous extends Animals {
         else if(currentHp < maxHp * 0.7){
             hunger(unit);
         }
-        else if(currentHp >= maxHp * 0.8 && age >= 2 && age <= 2.1 && !goal){
+        else if(currentHp >= maxHp * 0.6 && age >= 0.5 && age <= 1 && !goal){
             reproduction(unit);
         }
         else {

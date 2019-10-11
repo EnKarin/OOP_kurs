@@ -8,7 +8,7 @@ abstract class Animals extends Beings {
     double speed;
     boolean live = true;
     boolean goal = false;
-    double globalsin = 0, globalcos = 0;
+    private double globalsin = 0, globalcos = 0;
     final Random rand = new Random();
 
     Animals(boolean male, double maxHp, int x, int y, double speed) {

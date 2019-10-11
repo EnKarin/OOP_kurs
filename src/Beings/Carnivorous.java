@@ -1,6 +1,5 @@
 package Beings;
 
-import java.util.Random;
 import java.util.Set;
 
 public class Carnivorous extends Animals{
@@ -34,7 +33,7 @@ public class Carnivorous extends Animals{
         Herbivorous temp = (Herbivorous) search(unit, Herbivorous.class);
         if(temp != null) {
             int distance = (int) Math.sqrt(Math.pow(x - temp.x, 2) + Math.pow(y - temp.y, 2));
-            if (distance <= 1000) {
+            if (distance <= 500) {
                 return temp;
             }
         }
@@ -73,7 +72,7 @@ public class Carnivorous extends Animals{
         else if(currentHp < maxHp * 0.7){
             pursuit(unit);
         }
-        else if(currentHp >= maxHp * 0.8 && age >= 2 && age <= 2.1 && !goal){
+        else if(currentHp >= maxHp * 0.6 && age >= 0.5 && age <= 1 && !goal){
             reproduction(unit);
         }
         else {

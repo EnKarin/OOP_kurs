@@ -45,7 +45,7 @@ public class Main extends JFrame{
         while (true){
             repaint();
             try{
-                Thread.sleep(40);
+                Thread.sleep(10);
             }
             catch (InterruptedException e){
                 Thread.interrupted();
@@ -103,7 +103,7 @@ public class Main extends JFrame{
 
                     }
                 }
-                g.fillOval(temp.getX() - x, temp.getY() - y, (int)temp.getCurrentHp(), (int)temp.getCurrentHp());
+                g.fillOval(temp.getX() - x, temp.getY() - y, (int)(temp.getCurrentHp() / 2.3), (int)(temp.getCurrentHp() / 2.3));
             }
         }
     }
@@ -111,14 +111,14 @@ public class Main extends JFrame{
     public static void main(String[] args) {
         Random rand = new Random();
         rand.setSeed(2);
-        for(int i = 0; i < 100; i++){
-            set.add(new Plants(new Random().nextBoolean(), rand.nextInt(20), rand.nextInt(3000), rand.nextInt(3000)));
+        for(int i = 0; i < 300; i++){
+            set.add(new Plants(new Random().nextBoolean(), rand.nextInt(30), rand.nextInt(3000), rand.nextInt(3000)));
         }
-        for(int i = 0; i < 60; i++){
+        for(int i = 0; i < 200; i++){
             set.add(new Herbivorous(new Random().nextBoolean(), rand.nextInt(60), rand.nextInt(3000), rand.nextInt(3000),
                     rand.nextDouble() * 10 / Double.MAX_VALUE + 1));
         }
-        for(int i = 0; i < 40; i++){
+        for(int i = 0; i < 50; i++){
             set.add(new Carnivorous(new Random().nextBoolean(), rand.nextInt(60), rand.nextInt(3000), rand.nextInt(3000),
                     rand.nextDouble() * 10 / Double.MAX_VALUE + 2));
         }
