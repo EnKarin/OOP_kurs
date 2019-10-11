@@ -7,7 +7,7 @@ public abstract class Beings {
     double age = 0;
     double currentHp, maxHp;
     private boolean male;
-    int x, y;
+    double x, y;
 
     Beings(boolean male, double maxHp, int x, int y){
      this.currentHp = maxHp * 0.4;
@@ -60,11 +60,11 @@ public abstract class Beings {
     }
 
     public int getX(){
-        return x;
+        return (int)x;
     }
 
     public int getY(){
-        return y;
+        return (int)y;
     }
 
     public double getCurrentHp(){

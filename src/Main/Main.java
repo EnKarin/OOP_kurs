@@ -116,11 +116,11 @@ public class Main extends JFrame{
         }
         for(int i = 0; i < 60; i++){
             set.add(new Herbivorous(new Random().nextBoolean(), rand.nextInt(60), rand.nextInt(3000), rand.nextInt(3000),
-                    rand.nextInt(2) + 2));
+                    rand.nextInt(3) + 1));
         }
         for(int i = 0; i < 40; i++){
             set.add(new Carnivorous(new Random().nextBoolean(), rand.nextInt(60), rand.nextInt(3000), rand.nextInt(3000),
-                    rand.nextInt(4) + 1));
+                    rand.nextInt(4) + 2));
         }
 
         new Main();
