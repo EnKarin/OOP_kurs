@@ -117,15 +117,15 @@ public class Main extends JFrame{
     public static void main(String[] args) {
         Random rand = new Random();
         rand.setSeed(2);
-        for(int i = 0; i < 15; i++){
-            set.add(new Plants(new Random().nextBoolean(), rand.nextInt(50), rand.nextInt(1370), rand.nextInt(727)));
+        for(int i = 0; i < 60; i++){
+            set.add(new Plants(new Random().nextBoolean(), rand.nextInt(20), rand.nextInt(1370), rand.nextInt(727)));
         }
-        for(int i = 0; i < 7; i++){
-            set.add(new Herbivorous(new Random().nextBoolean(), rand.nextInt(200), rand.nextInt(1370), rand.nextInt(727),
+        for(int i = 0; i < 30; i++){
+            set.add(new Herbivorous(new Random().nextBoolean(), rand.nextInt(60), rand.nextInt(1370), rand.nextInt(727),
                     rand.nextInt(10) + 15));
         }
-        for(int i = 0; i < 5; i++){
-            set.add(new Carnivorous(new Random().nextBoolean(), rand.nextInt(200), rand.nextInt(1370), rand.nextInt(727),
+        for(int i = 0; i < 10; i++){
+            set.add(new Carnivorous(new Random().nextBoolean(), rand.nextInt(60), rand.nextInt(1370), rand.nextInt(727),
                     rand.nextInt(30) + 10));
         }
 
