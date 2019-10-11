@@ -38,13 +38,6 @@ public class Main extends JFrame{
                     y+=50;
                     repaint();
                 }
-                /*
-                else if(e.getKeyCode() == KeyEvent.VK_SUBTRACT){
-                    repaint();
-                }
-                else if(e.getKeyCode() == KeyEvent.VK_ADD){
-                    repaint();
-                }*/
             }
         });
 
@@ -117,10 +110,10 @@ public class Main extends JFrame{
     public static void main(String[] args) {
         Random rand = new Random();
         rand.setSeed(2);
-        for(int i = 0; i < 600; i++){
+        for(int i = 0; i < 300; i++){
             set.add(new Plants(new Random().nextBoolean(), rand.nextInt(20), rand.nextInt(3000), rand.nextInt(3000)));
         }
-        for(int i = 0; i < 300; i++){
+        for(int i = 0; i < 150; i++){
             set.add(new Herbivorous(new Random().nextBoolean(), rand.nextInt(60), rand.nextInt(3000), rand.nextInt(3000),
                     rand.nextInt(10) + 15));
         }

@@ -6,7 +6,7 @@ public abstract class Beings {
 
     double age = 0;
     double currentHp, maxHp;
-    boolean male;
+    private boolean male;
     int x, y;
 
     Beings(boolean male, double maxHp, int x, int y){
@@ -31,8 +31,6 @@ public abstract class Beings {
         return searching;
     }
 
-    public abstract boolean live(Set<Beings> unit);
-
     void check(){
         if(x < 0)
             x = 3000;
@@ -43,6 +41,8 @@ public abstract class Beings {
         else if(y > 3000)
             y = 0;
     }
+
+    public abstract boolean live(Set<Beings> unit);
 
     public boolean isMale(){
         return male;

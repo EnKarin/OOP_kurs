@@ -10,7 +10,7 @@ public class Herbivorous extends Animals {
         super(male, maxHp, x, y, speed);
     }
 
-    private void reproduction(Set<Beings> unit) { //размножение травоядных
+    void reproduction(Set<Beings> unit) { //размножение травоядных
         double sin, cos;
         Herbivorous mam = (Herbivorous) search(unit, Herbivorous.class);
         if (enemy(unit) == null && mam != null) {
