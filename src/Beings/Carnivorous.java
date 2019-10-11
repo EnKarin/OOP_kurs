@@ -14,8 +14,8 @@ public class Carnivorous extends Animals{
         Carnivorous mam = (Carnivorous) search(unit, Carnivorous.class);
         if(mam != null) {
             int distance = (int) Math.sqrt(Math.pow(x - mam.x, 2) + Math.pow(y - mam.y, 2));
-            sin = Math.abs(y - mam.y) / distance;
-            cos = Math.abs(x - mam.x) / distance;
+            sin = (double) Math.abs(y - mam.y) / distance;
+            cos = (double)Math.abs(x - mam.x) / distance;
             x += speed * cos;
             y += speed * sin;
             if (Math.abs(x - mam.x) <= 3 && Math.abs(y - mam.y) <= 3) {
@@ -45,12 +45,12 @@ public class Carnivorous extends Animals{
             int distance;
             double sin, cos;
             distance = (int) Math.sqrt(Math.pow(x - hunger.x, 2) + Math.pow(y - hunger.y, 2));
-            sin = Math.abs(y - hunger.y) / distance;
-            cos = Math.abs(x - hunger.x) / distance;
+            sin = (double)Math.abs(y - hunger.y) / distance;
+            cos = (double)Math.abs(x - hunger.x) / distance;
             x += 2 * speed * cos;
             y += 2 * speed * sin;
             currentHp -= 0.002;
-            if(Math.abs(this.x - hunger.x) <= 3 && Math.abs(this.y - hunger.y) <= 3){
+            if((double)Math.abs(x - hunger.x) <= 3 && (double)Math.abs(y - hunger.y) <= 3){
                 currentHp += hunger.currentHp * 0.8;
                 hunger.currentHp = 0;
             }

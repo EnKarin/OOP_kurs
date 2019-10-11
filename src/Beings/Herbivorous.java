@@ -15,11 +15,11 @@ public class Herbivorous extends Animals {
         Herbivorous mam = (Herbivorous) search(unit, Herbivorous.class);
         if (enemy(unit) == null && mam != null) {
             int distance = (int) Math.sqrt(Math.pow(x - mam.x, 2) + Math.pow(y - mam.y, 2));
-            sin = Math.abs(y - mam.y) / distance;
-            cos = Math.abs(x - mam.x) / distance;
+            sin = (double) Math.abs(y - mam.y) / distance;
+            cos = (double)Math.abs(x - mam.x) / distance;
             x += speed * cos;
             y += speed * sin;
-            if (Math.abs(x - mam.x) <= 3 && Math.abs(y - mam.y) <= 3) {
+            if ((double)Math.abs(x - mam.x) <= 3 && (double)Math.abs(y - mam.y) <= 3) {
                 currentHp -= maxHp * 0.15;
                 goal = true;
                 unit.add(new Herbivorous(new Random().nextBoolean(),(int)(maxHp * 0.8 + new Random().nextInt((int) Math.abs(maxHp
@@ -50,7 +50,7 @@ public class Herbivorous extends Animals {
         x -= 2 * speed * cos;
         y -= 2 * speed * sin;
         currentHp -= 0.01;
-        if(Math.abs(x - enemy.x) <= 3 && Math.abs(y - enemy.y) <= 3){
+        if((double)Math.abs(x - enemy.x) <= 3 && (double)Math.abs(y - enemy.y) <= 3){
             live = false;
         }
     }
@@ -59,12 +59,12 @@ public class Herbivorous extends Animals {
         Plants temp = (Plants) search(unit, Plants.class);
         if(temp != null) {
             int distance = (int) Math.sqrt(Math.pow(x - temp.x, 2) + Math.pow(y - temp.y, 2));
-            double sin = Math.abs(y - temp.y) / distance;
-            double cos = Math.abs(x - temp.x) / distance;
+            double sin = (double)Math.abs(y - temp.y) / distance;
+            double cos = (double)Math.abs(x - temp.x) / distance;
             x += speed * cos;
             y += speed * sin;
             currentHp -= 0.005;
-            if (Math.abs(x - temp.x) <= currentHp && Math.abs(y - temp.y) <= currentHp) {
+            if ((double)Math.abs(x - temp.x) <= currentHp && (double)Math.abs(y - temp.y) <= currentHp) {
                 currentHp += temp.currentHp * 0.7;
                 temp.currentHp = 0;
             }
