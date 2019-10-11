@@ -45,7 +45,7 @@ public class Main extends JFrame{
         while (true){
             repaint();
             try{
-                Thread.sleep(10);
+                Thread.sleep(33);
             }
             catch (InterruptedException e){
                 Thread.interrupted();
@@ -59,25 +59,25 @@ public class Main extends JFrame{
 
         if(x == 0){
             g.setColor(red);
-            g.drawLine(1, 0, 1, getHeight());
+            g.drawLine(10, 0, 10, getHeight());
         }
-        else if(x == 5630){
+        else if(x > 1630){
             g.setColor(red);
-            g.drawLine(getWidth() - 1, 0, getWidth() - 1, getHeight());
+            g.drawLine(getWidth() - 10, 0, getWidth() - 10, getHeight());
         }
         if(y == 0){
             g.setColor(red);
-            g.drawLine(0, 1, getWidth(), 1);
+            g.drawLine(1, 33, getWidth() - 1, 33);
         }
-        else if(y == 6273){
+        else if(y > 2273){
             g.setColor(red);
-            g.drawLine(0, getHeight() - 1 ,getWidth(), getHeight() - 1);
+            g.drawLine(0, getHeight() - 10 ,getWidth(), getHeight() - 10);
         }
         for(Beings temp: set){
             if(!temp.live(set)){
                 set.remove(temp);
             }
-            else{
+            else if (temp.getX() > x && temp.getX() < getWidth() + x && temp.getY() > y && temp.getY() < getHeight() + y){
                 if(temp.getClass().equals(Plants.class)){
                     if(temp.isMale()){
                         g.setColor(new Color(50, 177, 24));
@@ -103,7 +103,7 @@ public class Main extends JFrame{
 
                     }
                 }
-                g.fillOval(temp.getX() - x, temp.getY() - y, (int)(temp.getCurrentHp() / 2.3), (int)(temp.getCurrentHp() / 2.3));
+                g.fillOval(temp.getX() - x, temp.getY() - y, (int)temp.getCurrentHp(), (int)temp.getCurrentHp());
             }
         }
     }
@@ -111,14 +111,14 @@ public class Main extends JFrame{
     public static void main(String[] args) {
         Random rand = new Random();
         rand.setSeed(2);
-        for(int i = 0; i < 300; i++){
-            set.add(new Plants(new Random().nextBoolean(), rand.nextInt(30), rand.nextInt(3000), rand.nextInt(3000)));
+        for(int i = 0; i < 100; i++){
+            set.add(new Plants(new Random().nextBoolean(), rand.nextInt(20), rand.nextInt(3000), rand.nextInt(3000)));
         }
-        for(int i = 0; i < 200; i++){
+        for(int i = 0; i < 60; i++){
             set.add(new Herbivorous(new Random().nextBoolean(), rand.nextInt(60), rand.nextInt(3000), rand.nextInt(3000),
                     rand.nextDouble() * 10 / Double.MAX_VALUE + 1));
         }
-        for(int i = 0; i < 50; i++){
+        for(int i = 0; i < 40; i++){
             set.add(new Carnivorous(new Random().nextBoolean(), rand.nextInt(60), rand.nextInt(3000), rand.nextInt(3000),
                     rand.nextDouble() * 10 / Double.MAX_VALUE + 2));
         }
