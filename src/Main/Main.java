@@ -23,19 +23,19 @@ public class Main extends JFrame{
             public void keyPressed(KeyEvent e) {
                 super.keyTyped(e);
                 if(e.getKeyCode() == KeyEvent.VK_RIGHT && x > 0){
-                    x--;
+                    x-=50;
                     repaint();
                 }
                 else if(e.getKeyCode() == KeyEvent.VK_LEFT && x < 5630){
-                    x++;
+                    x+= 50;
                     repaint();
                 }
                 else if(e.getKeyCode() == KeyEvent.VK_DOWN && y > 0){
-                    y--;
+                    y-=50;
                     repaint();
                 }
                 else if(e.getKeyCode() == KeyEvent.VK_UP && y < 6273){
-                    y++;
+                    y+=50;
                     repaint();
                 }
                 /*
@@ -51,7 +51,7 @@ public class Main extends JFrame{
         while (true){
             repaint();
             try{
-                Thread.sleep(16);
+                Thread.sleep(8);
             }
             catch (InterruptedException e){
                 Thread.interrupted();
@@ -121,14 +121,14 @@ public class Main extends JFrame{
         Random rand = new Random();
         rand.setSeed(2);
         for(int i = 0; i < 150; i++){
-            set.add(new Plants(rand.nextInt(50), rand.nextInt(700), rand.nextInt(700)));
+            set.add(new Plants(rand.nextInt(50), rand.nextInt(7000), rand.nextInt(7000)));
         }
         for(int i = 0; i < 70; i++){
-            set.add(new Herbivorous(rand.nextInt(200), rand.nextInt(700), rand.nextInt(700),
+            set.add(new Herbivorous(rand.nextInt(200), rand.nextInt(7000), rand.nextInt(7000),
                     rand.nextInt() * 2 / Integer.MAX_VALUE));
         }
         for(int i = 0; i < 50; i++){
-            set.add(new Carnivorous(rand.nextInt(200), rand.nextInt(700), rand.nextInt(700),
+            set.add(new Carnivorous(rand.nextInt(200), rand.nextInt(7000), rand.nextInt(7000),
                     rand.nextInt() * 3));
         }
 
