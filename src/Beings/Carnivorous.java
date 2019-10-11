@@ -50,7 +50,7 @@ public class Carnivorous extends Animals{
             x += 2 * speed * cos;
             y += 2 * speed * sin;
             currentHp -= 0.002;
-            if(Math.abs(x - hunger.x) <= 3 && Math.abs(y - hunger.y) <= 3){
+            if(Math.abs(this.x - hunger.x) <= 3 && Math.abs(this.y - hunger.y) <= 3){
                 currentHp += hunger.currentHp * 0.8;
                 hunger.currentHp = 0;
             }
@@ -59,16 +59,19 @@ public class Carnivorous extends Animals{
 
     public boolean live(Set<Beings> unit){
         check();
-        currentHp -= 0.001;
+        currentHp -= 0.01;
         age += 0.002;
         if(currentHp <= 0){
             return false;
         }
-        if(currentHp < maxHp * 0.7){
+        else if(currentHp < maxHp * 0.7){
             pursuit(unit);
         }
-        if(currentHp >= maxHp * 0.8 && age >= 5 && age <= 6 && !goal){
+        else if(currentHp >= maxHp * 0.8 && age >= 2 && age <= 2.1 && !goal){
             reproduction(unit);
+        }
+        else {
+            movement();
         }
         return true;
     }

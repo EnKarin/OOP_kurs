@@ -10,7 +10,7 @@ public class Herbivorous extends Animals {
         super(male, maxHp, x, y, speed);
     }
 
-    void reproduction(Set<Beings> unit) { //размножение травоядных
+    private void reproduction(Set<Beings> unit) { //размножение травоядных
         double sin, cos;
         Herbivorous mam = (Herbivorous) search(unit, Herbivorous.class);
         if (enemy(unit) == null && mam != null) {
@@ -73,7 +73,7 @@ public class Herbivorous extends Animals {
 
     public boolean live(Set<Beings> unit){
         check();
-        currentHp -= 0.001;
+        currentHp -= 0.01;
         age += 0.002;
         if(currentHp <= 0){
             return false;
@@ -85,8 +85,11 @@ public class Herbivorous extends Animals {
         else if(currentHp < maxHp * 0.7){
             hunger(unit);
         }
-        else if(currentHp >= maxHp * 0.8 && age >= 5 && age <= 6 && !goal){
+        else if(currentHp >= maxHp * 0.8 && age >= 2 && age <= 2.1 && !goal){
             reproduction(unit);
+        }
+        else {
+            movement();
         }
         return true;
     }
