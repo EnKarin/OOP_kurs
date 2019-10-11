@@ -45,8 +45,8 @@ public class Herbivorous extends Animals {
         double sin, cos;
         Carnivorous enemy = enemy(unit);
         distance = (int) Math.sqrt(Math.pow(x - enemy.x, 2) + Math.pow(y - enemy.y, 2));
-        sin = Math.abs(y - enemy.y) / distance;
-        cos = Math.abs(x - enemy.x) / distance;
+        sin = (double)Math.abs(y - enemy.y) / distance;
+        cos = (double)Math.abs(x - enemy.x) / distance;
         x -= 2 * speed * cos;
         y -= 2 * speed * sin;
         currentHp -= 0.01;
@@ -73,6 +73,7 @@ public class Herbivorous extends Animals {
 
     public boolean live(Set<Beings> unit){
         check();
+
         currentHp -= 0.01;
         age += 0.002;
         if(currentHp <= 0){

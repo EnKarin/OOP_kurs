@@ -10,7 +10,7 @@ public abstract class Beings {
     int x, y;
 
     Beings(boolean male, double maxHp, int x, int y){
-     this.currentHp = maxHp * 0.1;
+     this.currentHp = maxHp * 0.4;
      this.maxHp = maxHp;
      this.x = x;
      this.y = y;

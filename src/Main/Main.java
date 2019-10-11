@@ -51,7 +51,7 @@ public class Main extends JFrame{
         while (true){
             repaint();
             try{
-                Thread.sleep(1);
+                Thread.sleep(32);
             }
             catch (InterruptedException e){
                 Thread.interrupted();
@@ -62,9 +62,6 @@ public class Main extends JFrame{
     @Override
     public void paint(Graphics g) {
         super.paint(g);
-
-        //for debug
-        System.out.println("x = " + x + "\tsize = " + set.size() + "\ty = " + y);
 
         if(x == 0){
             g.setColor(red);
@@ -86,7 +83,7 @@ public class Main extends JFrame{
             if(!temp.live(set)){
                 set.remove(temp);
             }
-            else {
+            else if(temp.getX() + x > 0 && temp.getX() + x < 1370 && temp.getY() > 0 && temp.getY() < 727){
                 if(temp.getClass().equals(Plants.class)){
                     if(temp.isMale()){
                         g.setColor(new Color(50, 177, 24));
@@ -125,11 +122,11 @@ public class Main extends JFrame{
         }
         for(int i = 0; i < 7; i++){
             set.add(new Herbivorous(new Random().nextBoolean(), rand.nextInt(200), rand.nextInt(1370), rand.nextInt(727),
-                    rand.nextInt() * 2 / Integer.MAX_VALUE));
+                    rand.nextInt(10) + 15));
         }
         for(int i = 0; i < 5; i++){
             set.add(new Carnivorous(new Random().nextBoolean(), rand.nextInt(200), rand.nextInt(1370), rand.nextInt(727),
-                    rand.nextInt() * 3));
+                    rand.nextInt(30) + 10));
         }
 
         new Main();
