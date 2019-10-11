@@ -18,7 +18,7 @@ public abstract class Beings {
     }
 
     Beings search(Set<Beings> unit, Class currentClass){ //поиск партнера
-        boolean m = currentClass.equals(Plants.class);
+        final boolean m = currentClass.equals(Plants.class);
         int delta = Integer.MAX_VALUE;
         Beings searching = null;
         for(Beings temp: unit){

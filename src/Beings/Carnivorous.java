@@ -4,19 +4,18 @@ import java.util.Random;
 import java.util.Set;
 
 public class Carnivorous extends Animals{
-    Random rand = new Random();
+    private final Random rand = new Random();
 
     public Carnivorous(boolean male, int maxHp, int x, int y, double speed){
         super(male, maxHp, x, y, speed);
     }
 
     void reproduction(Set<Beings> unit){ //размножение хищников
-        double sin, cos;
-        Carnivorous mam = (Carnivorous) search(unit, Carnivorous.class);
+        final Carnivorous mam = (Carnivorous) search(unit, Carnivorous.class);
         if(mam != null) {
-            int distance = (int) Math.sqrt(Math.pow(x - mam.x, 2) + Math.pow(y - mam.y, 2));
-            sin = (double) Math.abs(y - mam.y) / distance;
-            cos = (double)Math.abs(x - mam.x) / distance;
+            final int distance = (int) Math.sqrt(Math.pow(x - mam.x, 2) + Math.pow(y - mam.y, 2));
+            final double sin = (double) Math.abs(y - mam.y) / distance;
+            final double cos = (double)Math.abs(x - mam.x) / distance;
             x += speed * cos;
             y += speed * sin;
             if (Math.abs(x - mam.x) <= 3 && Math.abs(y - mam.y) <= 3) {
@@ -30,9 +29,9 @@ public class Carnivorous extends Animals{
     }
 
     private Herbivorous hunger(Set<Beings> unit){ //поиск еды
-        Herbivorous temp = (Herbivorous) search(unit, Herbivorous.class);
+        final Herbivorous temp = (Herbivorous) search(unit, Herbivorous.class);
         if(temp != null) {
-            int distance = (int) Math.sqrt(Math.pow(x - temp.x, 2) + Math.pow(y - temp.y, 2));
+            final int distance = (int) Math.sqrt(Math.pow(x - temp.x, 2) + Math.pow(y - temp.y, 2));
             if (distance <= 300) {
                 return temp;
             }
@@ -41,13 +40,11 @@ public class Carnivorous extends Animals{
     }
 
     private void pursuit(Set<Beings> unit){ //преследование добычи
-        Herbivorous hunger = hunger(unit);
+        final Herbivorous hunger = hunger(unit);
         if(hunger != null) {
-            int distance;
-            double sin, cos;
-            distance = (int) Math.sqrt(Math.pow(x - hunger.x, 2) + Math.pow(y - hunger.y, 2));
-            sin = (double)Math.abs(y - hunger.y) / distance;
-            cos = (double)Math.abs(x - hunger.x) / distance;
+            final int distance = (int) Math.sqrt(Math.pow(x - hunger.x, 2) + Math.pow(y - hunger.y, 2));
+            final double sin = (double)Math.abs(y - hunger.y) / distance;
+            final double cos = (double)Math.abs(x - hunger.x) / distance;
             x += 2 * speed * cos;
             y += 2 * speed * sin;
             currentHp -= 0.002;
