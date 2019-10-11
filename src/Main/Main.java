@@ -17,24 +17,25 @@ public class Main extends JFrame{
         setBounds(0, 0, 1370, 727);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setVisible(true);
+        red = new Color(0xFF1109);
 
         addKeyListener(new KeyAdapter() {
             @Override
             public void keyPressed(KeyEvent e) {
                 super.keyTyped(e);
-                if(e.getKeyCode() == KeyEvent.VK_RIGHT && x > 0){
-                    x-=50;
+                if(e.getKeyCode() == KeyEvent.VK_RIGHT && x < 1630 ){
+                    x+=50;
                     repaint();
                 }
-                else if(e.getKeyCode() == KeyEvent.VK_LEFT && x < 1630){
-                    x+= 50;
+                else if(e.getKeyCode() == KeyEvent.VK_LEFT && x > 0){
+                    x-= 50;
                     repaint();
                 }
-                else if(e.getKeyCode() == KeyEvent.VK_DOWN && y > 0){
+                else if(e.getKeyCode() == KeyEvent.VK_UP && y > 0){
                     y-=50;
                     repaint();
                 }
-                else if(e.getKeyCode() == KeyEvent.VK_UP && y < 2273){
+                else if(e.getKeyCode() == KeyEvent.VK_DOWN && y < 2273){
                     y+=50;
                     repaint();
                 }
@@ -44,7 +45,7 @@ public class Main extends JFrame{
         while (true){
             repaint();
             try{
-                Thread.sleep(32);
+                Thread.sleep(16);
             }
             catch (InterruptedException e){
                 Thread.interrupted();
@@ -76,7 +77,7 @@ public class Main extends JFrame{
             if(!temp.live(set)){
                 set.remove(temp);
             }
-            else if(temp.getX() + x > 0 && temp.getX() + x < 1370 && temp.getY() > 0 && temp.getY() < 727){
+            else{
                 if(temp.getClass().equals(Plants.class)){
                     if(temp.isMale()){
                         g.setColor(new Color(50, 177, 24));
@@ -102,7 +103,7 @@ public class Main extends JFrame{
 
                     }
                 }
-                g.fillOval(temp.getX() + x, temp.getY() + y, (int)temp.getCurrentHp(), (int)temp.getCurrentHp());
+                g.fillOval(temp.getX() - x, temp.getY() - y, (int)temp.getCurrentHp(), (int)temp.getCurrentHp());
             }
         }
     }
@@ -110,16 +111,16 @@ public class Main extends JFrame{
     public static void main(String[] args) {
         Random rand = new Random();
         rand.setSeed(2);
-        for(int i = 0; i < 300; i++){
+        for(int i = 0; i < 100; i++){
             set.add(new Plants(new Random().nextBoolean(), rand.nextInt(20), rand.nextInt(3000), rand.nextInt(3000)));
         }
-        for(int i = 0; i < 150; i++){
+        for(int i = 0; i < 60; i++){
             set.add(new Herbivorous(new Random().nextBoolean(), rand.nextInt(60), rand.nextInt(3000), rand.nextInt(3000),
-                    rand.nextInt(10) + 15));
+                    rand.nextInt(2) + 2));
         }
-        for(int i = 0; i < 100; i++){
+        for(int i = 0; i < 40; i++){
             set.add(new Carnivorous(new Random().nextBoolean(), rand.nextInt(60), rand.nextInt(3000), rand.nextInt(3000),
-                    rand.nextInt(30) + 10));
+                    rand.nextInt(4) + 1));
         }
 
         new Main();

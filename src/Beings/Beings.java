@@ -17,12 +17,23 @@ public abstract class Beings {
      this.male = male;
     }
 
-    Beings search(Set<Beings> unit, Class currentClass){ //поиск партнера
-        final boolean m = currentClass.equals(Plants.class);
+    Beings search(Set<Beings> unit, Class searchingClass){
         int delta = Integer.MAX_VALUE;
         Beings searching = null;
         for(Beings temp: unit){
-            if(temp.getClass().equals(currentClass) && m == temp.male && Math.sqrt(Math.pow(x - temp.x, 2)
+            if(temp.getClass().equals(searchingClass) && (int)(Math.sqrt(Math.pow(x - temp.x, 2) + Math.pow(y - temp.y, 2))) < delta) {
+                delta = (int)Math.sqrt(Math.pow(x - temp.x, 2) + Math.pow(y - temp.y, 2));
+                searching = temp;
+            }
+        }
+        return searching;
+    }
+
+    Beings searchPartner(Set<Beings> unit, Class currentClass){ //поиск партнера
+        int delta = Integer.MAX_VALUE;
+        Beings searching = null;
+        for(Beings temp: unit){
+            if(temp.getClass().equals(currentClass) && male != temp.male && Math.sqrt(Math.pow(x - temp.x, 2)
                     + Math.pow(y - temp.y, 2)) < delta){
                 delta = (int)Math.sqrt(Math.pow(x - temp.x, 2) + Math.pow(y - temp.y, 2));
                 searching = temp;
