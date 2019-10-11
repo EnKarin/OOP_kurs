@@ -15,7 +15,7 @@ public class Plants extends Beings{
             return false;
         }
         int distance;
-        Plants dad = (Plants) search(unit, Plants.class);
+        Plants dad = (Plants) searchPartner(unit, Plants.class);
         age += 0.002;
         if(currentHp < maxHp) {
             currentHp += 0.008;

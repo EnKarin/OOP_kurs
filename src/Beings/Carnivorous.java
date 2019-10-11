@@ -12,7 +12,7 @@ public class Carnivorous extends Animals{
 
     void reproduction(Set<Beings> unit){ //размножение хищников
         double sin, cos;
-        Carnivorous mam = (Carnivorous) search(unit, Carnivorous.class);
+        Carnivorous mam = (Carnivorous) searchPartner(unit, Carnivorous.class);
         if(mam != null) {
             int distance = (int) Math.sqrt(Math.pow(x - mam.x, 2) + Math.pow(y - mam.y, 2));
             sin = (double) Math.abs(y - mam.y) / distance;
@@ -26,6 +26,9 @@ public class Carnivorous extends Animals{
                         - mam.maxHp) + 1)), x + 15, y + 15, speed * 0.8 + rand.nextInt((int)(Math.abs(speed
                         - mam.speed)) + 1)));
             }
+        }
+        else {
+            movement();
         }
     }
 

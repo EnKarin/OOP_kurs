@@ -12,7 +12,7 @@ public class Herbivorous extends Animals {
 
     void reproduction(Set<Beings> unit) { //размножение травоядных
         double sin, cos;
-        Herbivorous mam = (Herbivorous) search(unit, Herbivorous.class);
+        Herbivorous mam = (Herbivorous) searchPartner(unit, Herbivorous.class);
         if (enemy(unit) == null && mam != null) {
             int distance = (int) Math.sqrt(Math.pow(x - mam.x, 2) + Math.pow(y - mam.y, 2));
             sin = (double) Math.abs(y - mam.y) / distance;
@@ -29,6 +29,9 @@ public class Herbivorous extends Animals {
         }
         else if (enemy(unit) != null) {
             escape(unit);
+        }
+        else {
+            movement();
         }
     }
 
