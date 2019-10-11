@@ -4,7 +4,6 @@ import java.util.Random;
 import java.util.Set;
 
 public class Carnivorous extends Animals{
-    final Random rand = new Random();
 
     public Carnivorous(boolean male, int maxHp, int x, int y, double speed){
         super(male, maxHp, x, y, speed);
@@ -14,8 +13,8 @@ public class Carnivorous extends Animals{
         final Carnivorous mam = (Carnivorous) searchPartner(unit, Carnivorous.class);
         if(mam != null) {
             int distance = (int) Math.sqrt(Math.pow(x - mam.x, 2) + Math.pow(y - mam.y, 2));
-            final double sin = (double) Math.abs(y - mam.y) / distance;
-            final double cos = (double)Math.abs(x - mam.x) / distance;
+            final double sin = Math.abs(y - mam.y) / distance;
+            final double cos = Math.abs(x - mam.x) / distance;
             x += speed * cos;
             y += speed * sin;
             if (Math.abs(x - mam.x) <= 3 && Math.abs(y - mam.y) <= 3) {

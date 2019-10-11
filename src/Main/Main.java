@@ -45,7 +45,7 @@ public class Main extends JFrame{
         while (true){
             repaint();
             try{
-                Thread.sleep(16);
+                Thread.sleep(40);
             }
             catch (InterruptedException e){
                 Thread.interrupted();
@@ -116,11 +116,11 @@ public class Main extends JFrame{
         }
         for(int i = 0; i < 60; i++){
             set.add(new Herbivorous(new Random().nextBoolean(), rand.nextInt(60), rand.nextInt(3000), rand.nextInt(3000),
-                    rand.nextInt(3) + 1));
+                    rand.nextDouble() * 10 / Double.MAX_VALUE + 1));
         }
         for(int i = 0; i < 40; i++){
             set.add(new Carnivorous(new Random().nextBoolean(), rand.nextInt(60), rand.nextInt(3000), rand.nextInt(3000),
-                    rand.nextInt(4) + 2));
+                    rand.nextDouble() * 10 / Double.MAX_VALUE + 2));
         }
 
         new Main();

@@ -1,10 +1,8 @@
 package Beings;
 
-import java.util.Random;
 import java.util.Set;
 
 public class Herbivorous extends Animals {
-    final Random rand = new Random();
 
     public Herbivorous(boolean male, int maxHp, int x, int y, double speed) {
         super(male, maxHp, x, y, speed);
