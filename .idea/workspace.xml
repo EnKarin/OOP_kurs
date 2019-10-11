@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="88a832b4-3cbd-4dc9-8d08-08a34fc86188" name="Default Changelist" comment="May be great moving">
+    <list default="true" id="88a832b4-3cbd-4dc9-8d08-08a34fc86188" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Beings/Carnivorous.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Beings/Carnivorous.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Beings/Herbivorous.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Beings/Herbivorous.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="C:\Stud\Java\OOP\OOP_kurs\.idea\shelf/" />
@@ -21,40 +22,15 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Beings/Beings.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="5" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Main/Main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="72" column="28" lean-forward="true" selection-start-line="72" selection-start-column="28" selection-end-line="72" selection-end-column="28" />
+            <state relative-caret-position="204">
+              <caret line="12" column="33" selection-start-line="12" selection-start-column="33" selection-end-line="12" selection-end-column="33" />
               <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Beings/Herbivorous.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Beings/Carnivorous.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="14" column="31" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
-              <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#1633#1634#0" expanded="true" />
+                <element signature="e#1660#1661#0" expanded="true" />
+                <element signature="e#1684#1685#0" expanded="true" />
+                <element signature="e#1713#1714#0" expanded="true" />
+                <element signature="e#1737#1738#0" expanded="true" />
+                <element signature="e#1766#1767#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -63,8 +39,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Beings/Animals.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="23" column="9" selection-start-line="23" selection-start-column="9" selection-end-line="23" selection-end-column="9" />
+            <state relative-caret-position="119">
+              <caret line="7" column="17" lean-forward="true" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -75,8 +51,41 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Beings/Plants.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="16" column="21" selection-start-line="16" selection-start-column="21" selection-end-line="16" selection-end-column="21" />
+            <state relative-caret-position="119">
+              <caret line="21" column="58" selection-start-line="21" selection-start-column="58" selection-end-line="21" selection-end-column="58" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Beings/Herbivorous.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="101">
+              <caret line="36" column="99" selection-start-line="36" selection-start-column="99" selection-end-line="36" selection-end-column="99" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Beings/Carnivorous.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret line="42" column="20" lean-forward="true" selection-start-line="42" selection-start-column="20" selection-end-line="42" selection-end-column="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Main/Main.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="203">
+              <caret line="105" column="101" selection-start-line="105" selection-start-column="101" selection-end-line="105" selection-end-column="101" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -91,25 +100,26 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="UPDATE_CHANGES_POLICY" value="SHELVE" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/Beings.java" />
-        <option value="$PROJECT_DIR$/src/Beings/Beings.java" />
+        <option value="$PROJECT_DIR$/src/Beings/Animals.java" />
         <option value="$PROJECT_DIR$/src/Beings/Plants.java" />
+        <option value="$PROJECT_DIR$/src/Beings/Beings.java" />
+        <option value="$PROJECT_DIR$/src/Main/Main.java" />
         <option value="$PROJECT_DIR$/src/Beings/Carnivorous.java" />
         <option value="$PROJECT_DIR$/src/Beings/Herbivorous.java" />
-        <option value="$PROJECT_DIR$/src/Beings/Animals.java" />
-        <option value="$PROJECT_DIR$/src/Main/Main.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-524" />
-    <option name="y" value="22" />
-    <option name="width" value="1364" />
+    <option name="x" value="-525" />
+    <option name="y" value="21" />
+    <option name="width" value="1365" />
     <option name="height" value="726" />
   </component>
   <component name="ProjectView">
@@ -117,27 +127,30 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Course" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="OOP_kurs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="OOP_kurs" type="462c0819:PsiDirectoryNode" />
+              <item name="Kurs_OOP" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Kurs_OOP" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="OOP_kurs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="OOP_kurs" type="462c0819:PsiDirectoryNode" />
+              <item name="Kurs_OOP" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Kurs_OOP" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="OOP_kurs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="OOP_kurs" type="462c0819:PsiDirectoryNode" />
+              <item name="Kurs_OOP" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Kurs_OOP" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="Beings" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="OOP_kurs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="OOP_kurs" type="462c0819:PsiDirectoryNode" />
+              <item name="Kurs_OOP" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Kurs_OOP" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="Main" type="462c0819:PsiDirectoryNode" />
             </path>
@@ -145,9 +158,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Course" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -316,21 +326,21 @@
       <option name="project" value="LOCAL" />
       <updated>1570801087876</updated>
     </task>
-    <task id="LOCAL-00018" summary="May be great moving">
-      <created>1570808126256</created>
+    <task id="LOCAL-00018" summary="Changed method escape">
+      <created>1570810037776</created>
       <option name="number" value="00018" />
       <option name="presentableId" value="LOCAL-00018" />
       <option name="project" value="LOCAL" />
-      <updated>1570808126256</updated>
+      <updated>1570810037776</updated>
     </task>
     <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23298033" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23244552" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -339,7 +349,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32569557" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32451499" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -360,6 +370,22 @@
       <window_info anchor="right" id="Palette&#9;" order="8" />
     </layout>
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list />
+          </value>
+        </entry>
+        <entry key="User">
+          <value>
+            <list />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Access modification changed" />
     <MESSAGE value="Delete one field constructor" />
@@ -377,39 +403,15 @@
     <MESSAGE value="New game box" />
     <MESSAGE value="Working on minimal" />
     <MESSAGE value="Update move" />
-    <MESSAGE value="May be great moving" />
-    <option name="LAST_COMMIT_MESSAGE" value="May be great moving" />
+    <MESSAGE value="Changed method escape" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changed method escape" />
   </component>
   <component name="editorHistoryManager">
     <entry file="jar://D:/jdk-12.0.1/lib/src.zip!/java.base/java/util/ArrayDeque.java" />
-    <entry file="file://$PROJECT_DIR$/src/Beings/Beings.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="5" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Beings/Herbivorous.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Beings/Carnivorous.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="14" column="31" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Beings/Animals.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="23" column="9" selection-start-line="23" selection-start-column="9" selection-end-line="23" selection-end-column="9" />
+        <state relative-caret-position="119">
+          <caret line="7" column="17" lean-forward="true" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -418,18 +420,50 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Beings/Plants.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="16" column="21" selection-start-line="16" selection-start-column="21" selection-end-line="16" selection-end-column="21" />
+        <state relative-caret-position="119">
+          <caret line="21" column="58" selection-start-line="21" selection-start-column="58" selection-end-line="21" selection-end-column="58" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Beings/Beings.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="33" selection-start-line="12" selection-start-column="33" selection-end-line="12" selection-end-column="33" />
+          <folding>
+            <element signature="e#1633#1634#0" expanded="true" />
+            <element signature="e#1660#1661#0" expanded="true" />
+            <element signature="e#1684#1685#0" expanded="true" />
+            <element signature="e#1713#1714#0" expanded="true" />
+            <element signature="e#1737#1738#0" expanded="true" />
+            <element signature="e#1766#1767#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Main/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="72" column="28" lean-forward="true" selection-start-line="72" selection-start-column="28" selection-end-line="72" selection-end-column="28" />
+        <state relative-caret-position="203">
+          <caret line="105" column="101" selection-start-line="105" selection-start-column="101" selection-end-line="105" selection-end-column="101" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Beings/Carnivorous.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="42" column="20" lean-forward="true" selection-start-line="42" selection-start-column="20" selection-end-line="42" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Beings/Herbivorous.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="101">
+          <caret line="36" column="99" selection-start-line="36" selection-start-column="99" selection-end-line="36" selection-end-column="99" />
         </state>
       </provider>
     </entry>

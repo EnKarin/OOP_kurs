@@ -33,7 +33,7 @@ public class Carnivorous extends Animals{
         Herbivorous temp = (Herbivorous) search(unit, Herbivorous.class);
         if(temp != null) {
             int distance = (int) Math.sqrt(Math.pow(x - temp.x, 2) + Math.pow(y - temp.y, 2));
-            if (distance <= 500) {
+            if (distance <= 500 && temp.currentHp <= currentHp) {
                 return temp;
             }
         }
