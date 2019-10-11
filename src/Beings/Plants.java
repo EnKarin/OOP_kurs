@@ -1,11 +1,12 @@
 package Beings;
 
 import java.util.Set;
+import java.util.Random;
 
 public class Plants extends Beings{
 
-    public Plants(double maxHp, int x, int y){
-        super(maxHp, x, y);
+    public Plants(boolean male, double maxHp, int x, int y){
+        super(male, maxHp, x, y);
     }
 
     public boolean live(Set<Beings> unit){
@@ -19,11 +20,11 @@ public class Plants extends Beings{
         if(currentHp < maxHp) {
             currentHp += 0.008;
         }
-        if(age > 3 && age < 5 && currentHp > maxHp / 1.5 && dad != null){
+        if(age > 3 && age < 3.5 && currentHp > maxHp / 1.5 && dad != null){
             distance =(int)Math.sqrt(Math.pow(x - dad.x, 2) + Math.pow(y - dad.y, 2));
-            if(rand.nextInt(distance + 1) == 0){
-                unit.add(new Plants(maxHp * 0.8 + rand.nextInt((int)Math.abs(maxHp - dad.maxHp) + 1),
-                        x - 200 + rand.nextInt(400), y - 200 + rand.nextInt(400)));
+            if(new Random().nextInt(distance * 5 + 1) == 0){
+                unit.add(new Plants(new Random().nextBoolean(),maxHp * 0.8 + new Random().nextInt((int)Math.abs(maxHp - dad.maxHp) + 1),
+                        x - 200 + new Random().nextInt(400), y - 200 + new Random().nextInt(400)));
             }
         }
         return true;

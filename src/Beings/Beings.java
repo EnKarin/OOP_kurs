@@ -1,7 +1,5 @@
 package Beings;
 
-import java.util.ArrayDeque;
-import java.util.Random;
 import java.util.Set;
 
 public abstract class Beings {
@@ -9,16 +7,14 @@ public abstract class Beings {
     double age = 0;
     double currentHp, maxHp;
     boolean male;
-    Random rand = new Random();
     int x, y;
 
-    Beings(double maxHp, int x, int y){
+    Beings(boolean male, double maxHp, int x, int y){
      this.currentHp = maxHp * 0.1;
      this.maxHp = maxHp;
      this.x = x;
      this.y = y;
-     rand.setSeed(0);
-     male = rand.nextBoolean();
+     this.male = male;
     }
 
     Beings search(Set<Beings> unit, Class currentClass){ //поиск партнера

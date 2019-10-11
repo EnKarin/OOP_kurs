@@ -1,11 +1,12 @@
 package Beings;
 
+import java.util.Random;
 import java.util.Set;
 
 public class Carnivorous extends Animals{
 
-    public Carnivorous(int maxHp, int x, int y, double speed){
-        super(maxHp, x, y, speed);
+    public Carnivorous(boolean male, int maxHp, int x, int y, double speed){
+        super(male, maxHp, x, y, speed);
     }
 
     void reproduction(Set<Beings> unit){ //размножение хищников
@@ -20,8 +21,8 @@ public class Carnivorous extends Animals{
             if (Math.abs(x - mam.x) <= 3 && Math.abs(y - mam.y) <= 3) {
                 currentHp -= maxHp * 0.15;
                 goal = true;
-                unit.add(new Carnivorous((int) (maxHp * 0.8 + rand.nextInt((int) Math.abs(maxHp
-                        - mam.maxHp))), x + 15, y + 15, (int) (speed * 0.8 + rand.nextInt((int) (Math.abs(speed
+                unit.add(new Carnivorous(new Random().nextBoolean(), (int) (maxHp * 0.8 + new Random().nextInt((int) Math.abs(maxHp
+                        - mam.maxHp))), x + 15, y + 15, (int) (speed * 0.8 + new Random().nextInt((int) (Math.abs(speed
                         - mam.speed))))));
             }
         }
