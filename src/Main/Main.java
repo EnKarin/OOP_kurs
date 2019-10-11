@@ -26,7 +26,7 @@ public class Main extends JFrame{
                     x-=50;
                     repaint();
                 }
-                else if(e.getKeyCode() == KeyEvent.VK_LEFT && x < 5630){
+                else if(e.getKeyCode() == KeyEvent.VK_LEFT && x < 1630){
                     x+= 50;
                     repaint();
                 }
@@ -34,7 +34,7 @@ public class Main extends JFrame{
                     y-=50;
                     repaint();
                 }
-                else if(e.getKeyCode() == KeyEvent.VK_UP && y < 6273){
+                else if(e.getKeyCode() == KeyEvent.VK_UP && y < 2273){
                     y+=50;
                     repaint();
                 }
@@ -117,15 +117,15 @@ public class Main extends JFrame{
     public static void main(String[] args) {
         Random rand = new Random();
         rand.setSeed(2);
-        for(int i = 0; i < 60; i++){
-            set.add(new Plants(new Random().nextBoolean(), rand.nextInt(20), rand.nextInt(1370), rand.nextInt(727)));
+        for(int i = 0; i < 600; i++){
+            set.add(new Plants(new Random().nextBoolean(), rand.nextInt(20), rand.nextInt(3000), rand.nextInt(3000)));
         }
-        for(int i = 0; i < 30; i++){
-            set.add(new Herbivorous(new Random().nextBoolean(), rand.nextInt(60), rand.nextInt(1370), rand.nextInt(727),
+        for(int i = 0; i < 300; i++){
+            set.add(new Herbivorous(new Random().nextBoolean(), rand.nextInt(60), rand.nextInt(3000), rand.nextInt(3000),
                     rand.nextInt(10) + 15));
         }
-        for(int i = 0; i < 10; i++){
-            set.add(new Carnivorous(new Random().nextBoolean(), rand.nextInt(60), rand.nextInt(1370), rand.nextInt(727),
+        for(int i = 0; i < 100; i++){
+            set.add(new Carnivorous(new Random().nextBoolean(), rand.nextInt(60), rand.nextInt(3000), rand.nextInt(3000),
                     rand.nextInt(30) + 10));
         }
 

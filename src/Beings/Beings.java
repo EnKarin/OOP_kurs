@@ -35,12 +35,12 @@ public abstract class Beings {
 
     void check(){
         if(x < 0)
-            x = 7000;
-        else if(x > 7000)
+            x = 3000;
+        else if(x > 3000)
             x = 0;
         if(y < 0)
-            y = 7000;
-        else if(y > 7000)
+            y = 3000;
+        else if(y > 3000)
             y = 0;
     }
 
