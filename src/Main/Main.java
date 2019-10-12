@@ -11,13 +11,15 @@ import Beings.*;
 public class Main extends JFrame{
     int x = 0, y = 0;
     static Set<Beings> set = Collections.newSetFromMap(new ConcurrentHashMap<>());
-    private final Color red;
 
     Main(){
         setBounds(0, 0, 1370, 727);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setVisible(true);
-        red = new Color(0xFF1109);
+        Panel panel = new Panel(set);
+        add(panel);
+        panel.setVisible(true);
+
 
         addKeyListener(new KeyAdapter() {
             @Override
@@ -25,32 +27,76 @@ public class Main extends JFrame{
                 super.keyTyped(e);
                 if(e.getKeyCode() == KeyEvent.VK_RIGHT && x < 1630 ){
                     x+=50;
+                    panel.setxy(x, y);
                     repaint();
                 }
                 else if(e.getKeyCode() == KeyEvent.VK_LEFT && x > 0){
                     x-= 50;
+                    panel.setxy(x, y);
                     repaint();
                 }
                 else if(e.getKeyCode() == KeyEvent.VK_UP && y > 0){
                     y-=50;
+                    panel.setxy(x, y);
                     repaint();
                 }
                 else if(e.getKeyCode() == KeyEvent.VK_DOWN && y < 2273){
                     y+=50;
+                    panel.setxy(x, y);
                     repaint();
                 }
             }
         });
-
         while (true){
             repaint(30, 0, 0, getWidth(), getHeight());
         }
     }
 
-    @Override
+    /*@Override
     public void paint(Graphics g) {
         super.paint(g);
+    }
+     */
 
+    public static void main(String[] args) {
+        Random rand = new Random();
+        rand.setSeed(2);
+        for(int i = 0; i < 300; i++){
+            set.add(new Plants(new Random().nextBoolean(), rand.nextInt(35), rand.nextInt(3000), rand.nextInt(3000)));
+        }
+        for(int i = 0; i < 100; i++){
+            set.add(new Herbivorous(new Random().nextBoolean(), rand.nextInt(50), rand.nextInt(3000), rand.nextInt(3000),
+                    rand.nextDouble() * 10000 / Double.MAX_VALUE + 1));
+        }
+        for(int i = 0; i < 100; i++){
+            set.add(new Carnivorous(new Random().nextBoolean(), rand.nextInt(65), rand.nextInt(3000), rand.nextInt(3000),
+                    rand.nextDouble() * 10000 / Double.MAX_VALUE + 2));
+        }
+
+        new Main();
+    }
+}
+
+class Panel extends JPanel{
+    int x, y;
+    Color red;
+    Set<Beings> set;
+
+    Panel(Set<Beings> set){
+        red = new Color(0xFF1109);
+        this.set = set;
+    }
+
+    void setxy(int xWindow, int yWindow){
+        x = xWindow;
+        y = yWindow;
+    }
+
+    JPanel getPanel(){ return this;}
+
+    @Override
+    protected void paintComponent(Graphics g) {
+        super.paintComponent(g);
         if(x == 0){
             g.setColor(red);
             g.drawLine(10, 0, 10, getHeight());
@@ -100,23 +146,5 @@ public class Main extends JFrame{
                 g.fillOval(temp.getX() - x, temp.getY() - y, (int)(temp.getCurrentHp() / 2), (int)(temp.getCurrentHp() / 2));
             }
         }
-    }
-
-    public static void main(String[] args) {
-        Random rand = new Random();
-        rand.setSeed(2);
-        for(int i = 0; i < 300; i++){
-            set.add(new Plants(new Random().nextBoolean(), rand.nextInt(35), rand.nextInt(3000), rand.nextInt(3000)));
-        }
-        for(int i = 0; i < 100; i++){
-            set.add(new Herbivorous(new Random().nextBoolean(), rand.nextInt(50), rand.nextInt(3000), rand.nextInt(3000),
-                    rand.nextDouble() * 10000 / Double.MAX_VALUE + 1));
-        }
-        for(int i = 0; i < 100; i++){
-            set.add(new Carnivorous(new Random().nextBoolean(), rand.nextInt(65), rand.nextInt(3000), rand.nextInt(3000),
-                    rand.nextDouble() * 10000 / Double.MAX_VALUE + 2));
-        }
-
-        new Main();
     }
 }
