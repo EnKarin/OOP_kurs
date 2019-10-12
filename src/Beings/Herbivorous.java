@@ -3,6 +3,7 @@ package Beings;
 import java.util.Set;
 
 public class Herbivorous extends Animals {
+    private int count = 0;
 
     public Herbivorous(boolean male, int maxHp, int x, int y, double speed) {
         super(male, maxHp, x, y, speed);
@@ -17,6 +18,7 @@ public class Herbivorous extends Animals {
             x += speed * cos;
             y += speed * sin;
             if (Math.abs(x - mam.x) <= 3 && Math.abs(y - mam.y) <= 3) {
+                count++;
                 currentHp -= currentHp * 0.15;
                 unit.add(new Herbivorous(rand.nextBoolean(),(int)(maxHp * 0.8 + rand.nextInt((int) Math.abs(maxHp
                         - mam.maxHp) + 1)), (int)(x + 15), (int)(y + 15), speed * 0.8 + rand.nextInt((int)(Math.abs(speed
@@ -75,12 +77,12 @@ public class Herbivorous extends Animals {
     public boolean live(Set<Beings> unit){
         check();
 
-        currentHp -= 0.01;
+        currentHp -= 0.001;
         age += 0.002;
         if(currentHp <= 0){
             return false;
         }
-        else if(rand.nextInt((int)age + 1) == 50){
+        else if(rand.nextInt((int)age + 1) == 3){
             return false;
         }
         else if(enemy(unit) != null){
@@ -90,7 +92,7 @@ public class Herbivorous extends Animals {
         else if(currentHp < maxHp * 0.7){
             hunger(unit);
         }
-        else if(currentHp >= maxHp * 0.5 && age >= 0.5 && age <= 1){
+        else if(currentHp >= maxHp * 0.5 && age >= 0.5 && age <= 0.6 && count < 2){
             reproduction(unit);
         }
         else {
