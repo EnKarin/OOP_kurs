@@ -10,6 +10,20 @@ public class Carnivorous extends Animals{
         super(male, maxHp, x, y, speed);
     }
 
+    @Override
+    Beings search(Set<Beings> unit, Class searchingClass) {
+        int delta = Integer.MAX_VALUE;
+        Beings searching = null;
+        for(Beings temp: unit){
+            if(temp.getClass().equals(searchingClass) && (int)(Math.sqrt(Math.pow(x - temp.x, 2) + Math.pow(y - temp.y, 2))) < delta
+                    && temp.currentHp < currentHp) {
+                delta = (int)Math.sqrt(Math.pow(x - temp.x, 2) + Math.pow(y - temp.y, 2));
+                searching = temp;
+            }
+        }
+        return searching;
+    }
+
     void reproduction(Set<Beings> unit){ //размножение хищников
         Random rand = new Random();
         final Carnivorous mam = (Carnivorous) searchPartner(unit, Carnivorous.class);
@@ -36,7 +50,7 @@ public class Carnivorous extends Animals{
         Herbivorous temp = (Herbivorous) search(unit, Herbivorous.class);
         if(temp != null) {
             int distance = (int) Math.sqrt(Math.pow(x - temp.x, 2) + Math.pow(y - temp.y, 2));
-            if (distance <= 600 && temp.currentHp <= currentHp) {
+            if (distance <= 500) {
                 return temp;
             }
         }
@@ -53,7 +67,7 @@ public class Carnivorous extends Animals{
             y += 1.3 * speed * sin;
             currentHp -= 0.002;
             if(Math.abs(x - hunger.x) <= 3 && Math.abs(y - hunger.y) <= 3){
-                currentHp += hunger.currentHp;
+                currentHp += hunger.currentHp* 0.8;
                 hunger.currentHp = 0;
             }
         }
@@ -71,13 +85,13 @@ public class Carnivorous extends Animals{
         if(currentHp <= 0){
             return false;
         }
-        else if(rand.nextInt((int)age + 1) == 3){
+        else if(rand.nextInt((int)age * 100 + 1) == 500){
             return false;
         }
         else if(currentHp < maxHp * 0.7){
             pursuit(unit);
         }
-        else if(currentHp >= maxHp * 0.5 && age >= 0.5 && age <= 0.6 && count < 2){
+        else if(currentHp >= maxHp * 0.5 && age >= 0.5 && age <= 0.6 && count < 3){
             reproduction(unit);
         }
         else {

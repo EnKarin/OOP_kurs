@@ -10,11 +10,12 @@ public class Plants extends Beings{
     }
 
     public boolean live(Set<Beings> unit){
+        Random rand = new Random();
         check();
         if(currentHp <= 0 ){
             return false;
         }
-        if(new Random().nextInt((int)age + 1) == 5){
+        else if(rand.nextInt((int)age * 5000 + 1) == 5000){
             return false;
         }
         final Plants dad = (Plants) searchPartner(unit, Plants.class);
@@ -22,11 +23,11 @@ public class Plants extends Beings{
         if(currentHp < maxHp) {
             currentHp += 0.008;
         }
-        if(age > 3 && age < 3.5 && currentHp > maxHp * 0.5 && dad != null){
+        if(age > 0.4 && age < 0.63 && dad != null){
             final int distance =(int)Math.sqrt(Math.pow(x - dad.x, 2) + Math.pow(y - dad.y, 2));
-            if(new Random().nextInt(distance * 5 + 1) == 0){
-                unit.add(new Plants(new Random().nextBoolean(),maxHp * 0.8 + new Random().nextInt((int)Math.abs(maxHp - dad.maxHp) + 1),
-                        (int)(x - 200 + new Random().nextInt(400)), (int)(y - 200 + new Random().nextInt(400))));
+            if(rand.nextInt(distance * 5 + 1) == 0){
+                unit.add(new Plants(rand.nextBoolean(),maxHp * 0.8 + rand.nextInt((int)Math.abs(maxHp - dad.maxHp) + 1),
+                        (int)(x - 200 + rand.nextInt(400)), (int)(y - 200 + rand.nextInt(400))));
             }
         }
         return true;

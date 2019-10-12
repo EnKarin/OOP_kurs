@@ -35,6 +35,22 @@ public class Herbivorous extends Animals {
         }
     }
 
+
+    @Override
+    Beings search(Set<Beings> unit, Class searchingClass) {
+        int delta = Integer.MAX_VALUE;
+        Beings searching = null;
+        for(Beings temp: unit){
+            if(temp.getClass().equals(searchingClass) && (int)(Math.sqrt(Math.pow(x - temp.x, 2) + Math.pow(y - temp.y, 2))) < delta
+                && (searchingClass.equals(Plants.class) || searchingClass.equals(Carnivorous.class) && temp.currentHp * 1.5
+                > currentHp)) {
+                delta = (int)Math.sqrt(Math.pow(x - temp.x, 2) + Math.pow(y - temp.y, 2));
+                searching = temp;
+            }
+        }
+        return searching;
+    }
+
     private Carnivorous enemy(Set<Beings> unit) { //проверка есть ли опасность
         final Carnivorous temp = (Carnivorous) search(unit, Carnivorous.class);
         if (temp != null && (int) Math.sqrt(Math.pow(x - temp.x, 2) + Math.pow(y - temp.y, 2)) <= 200) {
@@ -84,7 +100,7 @@ public class Herbivorous extends Animals {
         if(currentHp <= 0){
             return false;
         }
-        else if(rand.nextInt((int)age + 1) == 3){
+        else if(rand.nextInt((int)age * 100 + 1) == 500){
             return false;
         }
         else if(enemy(unit) != null){
@@ -94,7 +110,7 @@ public class Herbivorous extends Animals {
         else if(currentHp < maxHp * 0.7){
             hunger(unit);
         }
-        else if(currentHp >= maxHp * 0.5 && age >= 0.5 && age <= 0.6 && count < 1){
+        else if(currentHp >= maxHp * 0.5 && age >= 0.5 && age <= 0.6 && count < 4){
             reproduction(unit);
         }
         else {
