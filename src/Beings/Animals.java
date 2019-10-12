@@ -18,11 +18,11 @@ abstract class Animals extends Beings {
     void movement() {
         rand.setSeed(0);
         if(rand.nextInt(30) == 1 || globalCos == 0){
-            globalCos = rand.nextFloat() / Float.MAX_VALUE;
+            globalCos = rand.nextFloat();
             globalSin = 1 - globalCos;
         }
-        x += speed / 2 * globalCos;
-        y += speed / 2 * globalSin;
+        x += speed / 4 * globalCos;
+        y += speed / 4 * globalSin;
     }
 
     abstract void reproduction(Set<Beings> unit);

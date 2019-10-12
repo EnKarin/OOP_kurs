@@ -48,25 +48,26 @@ public class Main extends JFrame{
             }
         });
         while (true){
-            repaint(30, 0, 0, getWidth(), getHeight());
+            repaint(16, 0, 0, getWidth(), getHeight());
         }
     }
 
     public static void main(String[] args) {
         Random rand = new Random();
         Random num = new Random();
-        num.setSeed(100);
+        num.setSeed(400);
         rand.setSeed(2);
-        for(int i = 0, r = num.nextInt(500); i < r; i++){
+        for(int i = 0, r = num.nextInt(800); i < r; i++){
             set.add(new Plants(new Random().nextBoolean(), rand.nextInt(35), rand.nextInt(3000), rand.nextInt(3000)));
         }
-        for(int i = 0, r = num.nextInt(400); i < r; i++){
+        num.setSeed(100);
+        for(int i = 0, r = num.nextInt(300); i < r; i++){
             set.add(new Herbivorous(new Random().nextBoolean(), rand.nextInt(50), rand.nextInt(3000), rand.nextInt(3000),
-                    rand.nextDouble() * 10000 / Double.MAX_VALUE + 1));
+                    rand.nextDouble() * 10 + 1));
         }
-        for(int i = 0, r = num.nextInt(250); i < r; i++){
+        for(int i = 0, r = num.nextInt(300); i < r; i++){
             set.add(new Carnivorous(new Random().nextBoolean(), rand.nextInt(65), rand.nextInt(3000), rand.nextInt(3000),
-                    rand.nextDouble() * 10000 / Double.MAX_VALUE + 2));
+                    rand.nextDouble() * 10 + 2));
         }
 
         new Main();
