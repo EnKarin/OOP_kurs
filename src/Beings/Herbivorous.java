@@ -43,8 +43,8 @@ public class Herbivorous extends Animals {
         Beings searching = null;
         for(Beings temp: unit){
             if(temp.getClass().equals(searchingClass) && (int)(Math.sqrt(Math.pow(x - temp.x, 2)
-                    + Math.pow(y - temp.y, 2))) < delta && (searchingClass.equals(Plants.class)
-                    || searchingClass.equals(Carnivorous.class) && temp.currentHp * 1.5 > currentHp)) {
+                    + Math.pow(y - temp.y, 2))) < delta && ((searchingClass.equals(Plants.class)
+                    || searchingClass.equals(Carnivorous.class) && temp.currentHp * 1.5 > currentHp))) {
                 delta = (int)Math.sqrt(Math.pow(x - temp.x, 2) + Math.pow(y - temp.y, 2));
                 searching = temp;
             }
