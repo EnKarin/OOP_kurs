@@ -17,7 +17,7 @@ public class Carnivorous extends Animals{
             x += speed * cos;
             y += speed * sin;
             if (Math.abs(x - mam.x) <= 3 && Math.abs(y - mam.y) <= 3) {
-                currentHp -= maxHp * 0.15;
+                currentHp -= currentHp * 0.15;
                 unit.add(new Carnivorous(rand.nextBoolean(),(int)(maxHp * 0.8 + rand.nextInt((int) Math.abs(maxHp
                         - mam.maxHp) + 1)), (int)(x + 15), (int)(y + 15), speed * 0.8 + rand.nextInt((int)(Math.abs(speed
                         - mam.speed)) + 1)));
@@ -52,7 +52,7 @@ public class Carnivorous extends Animals{
             y += 2 * speed * sin;
             currentHp -= 0.002;
             if(Math.abs(x - hunger.x) <= 3 && Math.abs(y - hunger.y) <= 3){
-                currentHp += hunger.currentHp * 0.8;
+                currentHp += hunger.currentHp;
                 hunger.currentHp = 0;
             }
         }
@@ -68,7 +68,7 @@ public class Carnivorous extends Animals{
         if(currentHp <= 0){
             return false;
         }
-        else if(rand.nextInt((int)age + 1) == 15){
+        else if(rand.nextInt((int)age + 1) == 50){
             return false;
         }
         else if(currentHp < maxHp * 0.7){
