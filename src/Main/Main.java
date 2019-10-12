@@ -43,13 +43,7 @@ public class Main extends JFrame{
         });
 
         while (true){
-            repaint();
-            try{
-                Thread.sleep(33);
-            }
-            catch (InterruptedException e){
-                Thread.interrupted();
-            }
+            repaint(30, 0, 0, getWidth(), getHeight());
         }
     }
 
@@ -111,16 +105,16 @@ public class Main extends JFrame{
     public static void main(String[] args) {
         Random rand = new Random();
         rand.setSeed(2);
-        for(int i = 0; i < 200; i++){
+        for(int i = 0; i < 300; i++){
             set.add(new Plants(new Random().nextBoolean(), rand.nextInt(35), rand.nextInt(3000), rand.nextInt(3000)));
         }
         for(int i = 0; i < 100; i++){
             set.add(new Herbivorous(new Random().nextBoolean(), rand.nextInt(50), rand.nextInt(3000), rand.nextInt(3000),
-                    rand.nextDouble() * 25 / Double.MAX_VALUE + 1));
+                    rand.nextDouble() * 10000 / Double.MAX_VALUE + 1));
         }
-        for(int i = 0; i < 50; i++){
+        for(int i = 0; i < 100; i++){
             set.add(new Carnivorous(new Random().nextBoolean(), rand.nextInt(65), rand.nextInt(3000), rand.nextInt(3000),
-                    rand.nextDouble() * 25 / Double.MAX_VALUE + 2));
+                    rand.nextDouble() * 10000 / Double.MAX_VALUE + 2));
         }
 
         new Main();
