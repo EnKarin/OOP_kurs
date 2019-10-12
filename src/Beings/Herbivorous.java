@@ -22,9 +22,9 @@ public class Herbivorous extends Animals {
             if (Math.abs(x - mam.x) <= 3 && Math.abs(y - mam.y) <= 3) {
                 count++;
                 currentHp -= currentHp * 0.15;
-                unit.add(new Herbivorous(rand.nextBoolean(),(int)(maxHp * 0.8 + rand.nextInt((int) Math.abs(maxHp
-                        - mam.maxHp) + 1)), (int)(x + 15), (int)(y + 15), speed * 0.8 + rand.nextInt((int)(Math.abs(speed
-                        - mam.speed)) + 1)));
+                unit.add(new Herbivorous(rand.nextBoolean(),(int)(maxHp * 0.75 + rand.nextInt((int) Math.abs(maxHp
+                        - mam.maxHp) + 1)), (int)(x + 15), (int)(y + 15), speed * 0.7 + rand.nextInt((int)(
+                                Math.abs(speed - mam.speed)) + 1)));
             }
         }
         else if (enemy(unit) != null) {
