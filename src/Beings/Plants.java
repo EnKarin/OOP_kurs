@@ -27,8 +27,8 @@ public class Plants extends Beings{
         if(age > 0.4 && age < 0.63 && dad != null){
             final int distance =(int)Math.sqrt(Math.pow(x - dad.x, 2) + Math.pow(y - dad.y, 2));
             if(rand.nextInt(distance * 5 + 1) == 0){
-                unit.add(new Plants(rand.nextBoolean(),maxHp * 0.8
-                        + rand.nextInt((int)Math.abs(maxHp - dad.maxHp) + 1),
+                unit.add(new Plants(rand.nextBoolean(),(int)(Math.min(maxHp, dad.maxHp) * 0.9 +
+                        rand.nextDouble() * (Math.abs(maxHp - dad.maxHp) * 1.1)),
                         (int)(x - 200 + rand.nextInt(400)), (int)(y - 200 + rand.nextInt(400))));
             }
         }

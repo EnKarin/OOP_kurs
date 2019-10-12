@@ -65,17 +65,17 @@ public class Main extends JFrame{
             set.add(new Plants(new Random().nextBoolean(), rand.nextInt(30), rand.nextInt(3000),
                     rand.nextInt(3000)));
         }
-        num.setSeed(180);
+        num.setSeed(80);
         rand.setSeed(8);
-        for(int i = 0, r = num.nextInt(320); i < r; i++){
+        for(int i = 0, r = num.nextInt(200); i < r; i++){
             set.add(new Herbivorous(new Random().nextBoolean(), rand.nextInt(40), rand.nextInt(3000),
                     rand.nextInt(3000), rand.nextDouble() * 5 + 1));
         }
         rand.setSeed(10);
-        num.setSeed(15);
-        for(int i = 0, r = num.nextInt(60); i < r; i++){
-            set.add(new Carnivorous(new Random().nextBoolean(), rand.nextInt(60), rand.nextInt(3000),
-                    rand.nextInt(3000), rand.nextDouble() * 6 + 2));
+        num.setSeed(40);
+        for(int i = 0, r = num.nextInt(80); i < r; i++){
+            set.add(new Carnivorous(new Random().nextBoolean(), rand.nextInt(55), rand.nextInt(3000),
+                    rand.nextInt(3000), rand.nextDouble() * 5 + 2));
         }
 
         new Main();

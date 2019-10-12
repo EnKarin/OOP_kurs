@@ -23,9 +23,9 @@ public class Herbivorous extends Animals {
             if (Math.abs(x - mam.x) <= 3 && Math.abs(y - mam.y) <= 3) {
                 count++;
                 currentHp -= currentHp * 0.0002;
-                unit.add(new Herbivorous(rand.nextBoolean(),(int)(maxHp * 0.75
-                        + rand.nextInt((int) Math.abs(maxHp - mam.maxHp) + 1)), (int)(x + 15),
-                        (int)(y + 15), speed * 0.7 + rand.nextInt((int)(Math.abs(speed - mam.speed)) + 1)));
+                unit.add(new Herbivorous(rand.nextBoolean(),(int)(Math.min(maxHp, mam.maxHp) * 0.9 +
+                        rand.nextDouble() * (Math.abs(maxHp - mam.maxHp) * 1.1)), (int)(x + 15), (int)(y + 15),
+                        Math.min(speed, mam.speed) * 0.9 + rand.nextDouble() * (Math.abs(speed - mam.speed) * 1.1)));
             }
         }
         else if (enemy(unit) != null) {
@@ -107,7 +107,7 @@ public class Herbivorous extends Animals {
         if(currentHp <= 0.00001){
             return false;
         }
-        else if(rand.nextInt((int)age * 100 + 1) == 500){
+        else if(rand.nextInt((int)age * 100 + 1) == 600){
             return false;
         }
         else if(enemy(unit) != null){
@@ -117,7 +117,7 @@ public class Herbivorous extends Animals {
         else if(currentHp < maxHp * 0.6){
             hunger(unit);
         }
-        else if(currentHp >= maxHp * 0.6 && age >= 0.5 && age <= 0.6 && count < 2){
+        else if(currentHp >= maxHp * 0.6 && age >= 1 && age <= 1.1 && count < 2){
             reproduction(unit);
         }
         else {

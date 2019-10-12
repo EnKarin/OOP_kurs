@@ -22,7 +22,7 @@ public abstract class Beings {
         Beings searching = null;
         for(Beings temp: unit){
             if(temp.getClass().equals(currentClass) && male != temp.male && Math.sqrt(Math.pow(x - temp.x, 2)
-                    + Math.pow(y - temp.y, 2)) < delta){
+                    + Math.pow(y - temp.y, 2)) < delta && (temp.age > 0.7 || currentClass.equals(Plants.class))){
                 delta = (int)Math.sqrt(Math.pow(x - temp.x, 2) + Math.pow(y - temp.y, 2));
                 searching = temp;
             }

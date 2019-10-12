@@ -37,9 +37,9 @@ public class Carnivorous extends Animals{
             if (Math.abs(x - mam.x) <= 3 && Math.abs(y - mam.y) <= 3) {
                 count++;
                 currentHp -= currentHp * 0.003;
-                unit.add(new Carnivorous(rand.nextBoolean(),(int)(maxHp * 0.75
-                        + rand.nextInt((int) Math.abs(maxHp - mam.maxHp) + 1)), (int)(x + 15), (int)(y + 15),
-                        speed * 0.7 + rand.nextInt((int)(Math.abs(speed - mam.speed)) + 1)));
+                unit.add(new Carnivorous(rand.nextBoolean(),(int)(Math.min(maxHp, mam.maxHp) * 0.9 + rand.nextDouble() *
+                        (Math.abs(maxHp - mam.maxHp) * 1.1)), (int)(x + 15), (int)(y + 15),
+                        Math.min(speed, mam.speed) * 0.9 + rand.nextDouble() * (Math.abs(speed - mam.speed) * 1.1)));
             }
         }
         else {
@@ -51,7 +51,7 @@ public class Carnivorous extends Animals{
         Herbivorous temp = (Herbivorous) search(unit, Herbivorous.class);
         if(temp != null) {
             int distance = (int) Math.sqrt(Math.pow(x - temp.x, 2) + Math.pow(y - temp.y, 2));
-            if (distance <= 500) {
+            if (distance <= 600) {
                 return temp;
             }
         }
@@ -87,12 +87,12 @@ public class Carnivorous extends Animals{
         Random rand = new Random();
         check();
 
-        currentHp -= maxHp * 0.0002;
+        currentHp -= maxHp * 0.00015;
         age += 0.002;
         if(currentHp <= 0.0001){
             return false;
         }
-        else if(rand.nextInt((int)age * 100 + 1) == 500){
+        else if(rand.nextInt((int)age * 100 + 1) == 600){
             return false;
         }
         else if(currentHp < maxHp * 0.7){

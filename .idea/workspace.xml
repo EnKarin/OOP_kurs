@@ -3,8 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="88a832b4-3cbd-4dc9-8d08-08a34fc86188" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Beings/Beings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Beings/Beings.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Beings/Carnivorous.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Beings/Carnivorous.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Beings/Herbivorous.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Beings/Herbivorous.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Beings/Plants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Beings/Plants.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/Main.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -24,17 +26,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Beings/Beings.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="18" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
+            <state relative-caret-position="255">
+              <caret line="24" column="73" selection-start-line="24" selection-start-column="73" selection-end-line="24" selection-end-column="73" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Main/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="131">
-              <caret line="67" column="23" selection-start-line="67" selection-start-column="23" selection-end-line="67" selection-end-column="23" />
+            <state relative-caret-position="250">
+              <caret line="74" column="22" selection-start-line="74" selection-start-column="22" selection-end-line="74" selection-end-column="22" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -42,11 +44,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Beings/Herbivorous.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="842">
-              <caret line="119" column="81" selection-start-line="119" selection-start-column="81" selection-end-line="119" selection-end-column="81" />
+            <state relative-caret-position="238">
+              <caret line="119" column="66" selection-start-line="119" selection-start-column="66" selection-end-line="119" selection-end-column="66" />
             </state>
           </provider>
         </entry>
@@ -54,8 +56,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Beings/Carnivorous.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="100" column="68" selection-start-line="100" selection-start-column="68" selection-end-line="100" selection-end-column="68" />
+            <state relative-caret-position="-493">
+              <caret line="58" column="5" lean-forward="true" selection-start-line="58" selection-start-column="5" selection-end-line="58" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -75,8 +77,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Beings/Plants.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="21" column="21" selection-start-line="21" selection-start-column="21" selection-end-line="21" selection-end-column="21" />
+            <state relative-caret-position="255">
+              <caret line="30" column="71" selection-start-line="30" selection-start-column="71" selection-end-line="30" selection-end-column="71" />
             </state>
           </provider>
         </entry>
@@ -99,11 +101,11 @@
       <list>
         <option value="$PROJECT_DIR$/src/Beings.java" />
         <option value="$PROJECT_DIR$/src/Beings/Animals.java" />
-        <option value="$PROJECT_DIR$/src/Beings/Beings.java" />
         <option value="$PROJECT_DIR$/src/Beings/Plants.java" />
-        <option value="$PROJECT_DIR$/src/Beings/Herbivorous.java" />
         <option value="$PROJECT_DIR$/src/Beings/Carnivorous.java" />
+        <option value="$PROJECT_DIR$/src/Beings/Beings.java" />
         <option value="$PROJECT_DIR$/src/Main/Main.java" />
+        <option value="$PROJECT_DIR$/src/Beings/Herbivorous.java" />
       </list>
     </option>
   </component>
@@ -423,7 +425,14 @@
       <option name="project" value="LOCAL" />
       <updated>1570896873254</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="New balance">
+      <created>1570898861482</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1570898861482</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TodoView">
@@ -486,7 +495,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Some bug fix" />
     <MESSAGE value="Add check function" />
     <MESSAGE value="Anything print" />
     <MESSAGE value="Changed random male" />
@@ -511,24 +519,11 @@
     <MESSAGE value="Fixed speed and maxHp" />
     <MESSAGE value="Make balance and overrated search" />
     <MESSAGE value="Bugfix search plants for food" />
-    <option name="LAST_COMMIT_MESSAGE" value="Bugfix search plants for food" />
+    <MESSAGE value="New balance" />
+    <option name="LAST_COMMIT_MESSAGE" value="New balance" />
   </component>
   <component name="editorHistoryManager">
     <entry file="jar://D:/jdk-12.0.1/lib/src.zip!/java.base/java/util/ArrayDeque.java" />
-    <entry file="file://$PROJECT_DIR$/src/Beings/Beings.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="18" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Beings/Plants.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="21" column="21" selection-start-line="21" selection-start-column="21" selection-end-line="21" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Beings/Animals.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
@@ -539,27 +534,41 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Beings/Carnivorous.java">
+    <entry file="file://$PROJECT_DIR$/src/Beings/Plants.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="100" column="68" selection-start-line="100" selection-start-column="68" selection-end-line="100" selection-end-column="68" />
+        <state relative-caret-position="255">
+          <caret line="30" column="71" selection-start-line="30" selection-start-column="71" selection-end-line="30" selection-end-column="71" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Beings/Herbivorous.java">
+    <entry file="file://$PROJECT_DIR$/src/Beings/Carnivorous.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="842">
-          <caret line="119" column="81" selection-start-line="119" selection-start-column="81" selection-end-line="119" selection-end-column="81" />
+        <state relative-caret-position="-493">
+          <caret line="58" column="5" lean-forward="true" selection-start-line="58" selection-start-column="5" selection-end-line="58" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Beings/Beings.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="24" column="73" selection-start-line="24" selection-start-column="73" selection-end-line="24" selection-end-column="73" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Main/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="131">
-          <caret line="67" column="23" selection-start-line="67" selection-start-column="23" selection-end-line="67" selection-end-column="23" />
+        <state relative-caret-position="250">
+          <caret line="74" column="22" selection-start-line="74" selection-start-column="22" selection-end-line="74" selection-end-column="22" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Beings/Herbivorous.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="119" column="66" selection-start-line="119" selection-start-column="66" selection-end-line="119" selection-end-column="66" />
         </state>
       </provider>
     </entry>
