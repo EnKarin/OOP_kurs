@@ -60,12 +60,12 @@ public class Main extends JFrame{
         for(int i = 0, r = num.nextInt(800); i < r; i++){
             set.add(new Plants(new Random().nextBoolean(), rand.nextInt(35), rand.nextInt(3000), rand.nextInt(3000)));
         }
-        num.setSeed(100);
-        for(int i = 0, r = num.nextInt(300); i < r; i++){
+        num.setSeed(50);
+        for(int i = 0, r = num.nextInt(200); i < r; i++){
             set.add(new Herbivorous(new Random().nextBoolean(), rand.nextInt(50), rand.nextInt(3000), rand.nextInt(3000),
                     rand.nextDouble() * 10 + 1));
         }
-        for(int i = 0, r = num.nextInt(300); i < r; i++){
+        for(int i = 0, r = num.nextInt(200); i < r; i++){
             set.add(new Carnivorous(new Random().nextBoolean(), rand.nextInt(65), rand.nextInt(3000), rand.nextInt(3000),
                     rand.nextDouble() * 10 + 2));
         }
