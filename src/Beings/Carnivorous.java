@@ -68,13 +68,13 @@ public class Carnivorous extends Animals{
         if(currentHp <= 0){
             return false;
         }
-        else if(rand.nextInt((int)age + 1) == 5){
+        else if(rand.nextInt((int)age + 1) == 7){
             return false;
         }
         else if(currentHp < maxHp * 0.7){
             pursuit(unit);
         }
-        else if(currentHp >= maxHp * 0.6 && age >= 0.5 && age <= 1){
+        else if(currentHp >= maxHp * 0.5 && age >= 0.5 && age <= 1){
             reproduction(unit);
         }
         else {

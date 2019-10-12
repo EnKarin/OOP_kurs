@@ -48,7 +48,7 @@ public class Herbivorous extends Animals {
         x -= 2.3 * speed * cos;
         y -= 2.3 * speed * sin;
         currentHp -= 0.01;
-        if(Math.abs(x - enemy.x) <= 3 && Math.abs(y - enemy.y) <= 3){
+        if(Math.abs(x - enemy.x) <= 1 && Math.abs(y - enemy.y) <= 1){
             live = false;
         }
     }
@@ -80,7 +80,7 @@ public class Herbivorous extends Animals {
         if(currentHp <= 0){
             return false;
         }
-        else if(rand.nextInt((int)age + 1) == 5){
+        else if(rand.nextInt((int)age + 1) == 7){
             return false;
         }
         else if(enemy(unit) != null){
@@ -90,7 +90,7 @@ public class Herbivorous extends Animals {
         else if(currentHp < maxHp * 0.7){
             hunger(unit);
         }
-        else if(currentHp >= maxHp * 0.6 && age >= 0.5 && age <= 1){
+        else if(currentHp >= maxHp * 0.5 && age >= 0.5 && age <= 1){
             reproduction(unit);
         }
         else {
