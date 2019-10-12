@@ -107,7 +107,7 @@ public class Herbivorous extends Animals {
         if(currentHp <= 0.00001){
             return false;
         }
-        else if(rand.nextInt((int)age * 100 + 1) == 600){
+        else if(rand.nextInt((int)age * 100 + 1) == 450){
             return false;
         }
         else if(enemy(unit) != null){
