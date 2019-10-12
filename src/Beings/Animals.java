@@ -16,10 +16,10 @@ abstract class Animals extends Beings {
     }
 
     void movement() {
-        rand.setSeed(0);
-        if(rand.nextInt(30) == 1 || globalCos < 0.00001){
-            globalCos = rand.nextDouble();
-            globalSin = 1 - globalCos;
+        Random random = new Random();
+        if(random.nextInt(240) == 1 || globalCos < 0.00001){
+            globalCos = random.nextDouble() * 2 - 1;
+            globalSin = Math.sqrt(1 - Math.pow(globalCos, 2)) * (random.nextBoolean()? 1: -1);
         }
         x += speed / 4 * globalCos;
         y += speed / 4 * globalSin;
