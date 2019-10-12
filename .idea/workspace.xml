@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="88a832b4-3cbd-4dc9-8d08-08a34fc86188" name="Default Changelist" comment="">
+    <list default="true" id="88a832b4-3cbd-4dc9-8d08-08a34fc86188" name="Default Changelist" comment="New time of dying">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Beings/Carnivorous.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Beings/Carnivorous.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Beings/Herbivorous.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Beings/Herbivorous.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="C:\Stud\Java\OOP\OOP_kurs\.idea\shelf/" />
@@ -44,8 +42,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Beings/Herbivorous.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="109" column="54" selection-start-line="109" selection-start-column="54" selection-end-line="109" selection-end-column="54" />
+            <state relative-caret-position="230">
+              <caret line="113" column="25" lean-forward="true" selection-start-line="113" selection-start-column="25" selection-end-line="113" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -441,7 +439,14 @@
       <option name="project" value="LOCAL" />
       <updated>1570907744800</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="New time of dying">
+      <created>1570908556391</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1570908556391</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TodoView">
@@ -455,7 +460,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24432677" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -466,7 +470,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.329806" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32242227" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32242227" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39858907" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -504,7 +508,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Anything print" />
     <MESSAGE value="Changed random male" />
     <MESSAGE value="Create defolt movement" />
     <MESSAGE value="Bagfix" />
@@ -529,7 +532,8 @@
     <MESSAGE value="Bugfix search plants for food" />
     <MESSAGE value="New balance" />
     <MESSAGE value="New balance for evolved" />
-    <option name="LAST_COMMIT_MESSAGE" value="New balance for evolved" />
+    <MESSAGE value="New time of dying" />
+    <option name="LAST_COMMIT_MESSAGE" value="New time of dying" />
   </component>
   <component name="editorHistoryManager">
     <entry file="jar://D:/jdk-12.0.1/lib/src.zip!/java.base/java/util/ArrayDeque.java" />
@@ -576,8 +580,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Beings/Herbivorous.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="109" column="54" selection-start-line="109" selection-start-column="54" selection-end-line="109" selection-end-column="54" />
+        <state relative-caret-position="230">
+          <caret line="113" column="25" lean-forward="true" selection-start-line="113" selection-start-column="25" selection-end-line="113" selection-end-column="25" />
         </state>
       </provider>
     </entry>
