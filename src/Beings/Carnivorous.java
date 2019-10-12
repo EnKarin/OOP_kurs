@@ -50,8 +50,8 @@ public class Carnivorous extends Animals{
             final int distance = (int) Math.sqrt(Math.pow(x - hunger.x, 2) + Math.pow(y - hunger.y, 2));
             final double sin = (hunger.y - y) / distance;
             final double cos = (hunger.x - x) / distance;
-            x += 2 * speed * cos;
-            y += 2 * speed * sin;
+            x += 1.3 * speed * cos;
+            y += 1.3 * speed * sin;
             currentHp -= 0.002;
             if(Math.abs(x - hunger.x) <= 3 && Math.abs(y - hunger.y) <= 3){
                 currentHp += hunger.currentHp;
