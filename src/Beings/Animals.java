@@ -14,8 +14,6 @@ abstract class Animals extends Beings {
         this.speed = speed;
     }
 
-    abstract Beings search(Set<Beings> unit, Class searchingClass);
-
     void movement() {
         Random random = new Random();
         if(random.nextInt(240) == 1 || globalCos < 0.00001){
@@ -25,6 +23,8 @@ abstract class Animals extends Beings {
         x += speed / 4 * globalCos;
         y += speed / 4 * globalSin;
     }
+
+    abstract Beings search(Set<Beings> unit, Class searchingClass);
 
     abstract void reproduction(Set<Beings> unit);
 }

@@ -10,6 +10,7 @@ public class Herbivorous extends Animals {
         super(male, maxHp, x, y, speed);
     }
 
+    @Override
     void reproduction(Set<Beings> unit) { //размножение травоядных
         Random rand = new Random();
         final Herbivorous mam = (Herbivorous) searchPartner(unit, Herbivorous.class);
@@ -22,9 +23,9 @@ public class Herbivorous extends Animals {
             if (Math.abs(x - mam.x) <= 3 && Math.abs(y - mam.y) <= 3) {
                 count++;
                 currentHp -= currentHp * 0.15;
-                unit.add(new Herbivorous(rand.nextBoolean(),(int)(maxHp * 0.75 + rand.nextInt((int) Math.abs(maxHp
-                        - mam.maxHp) + 1)), (int)(x + 15), (int)(y + 15), speed * 0.7 + rand.nextInt((int)(
-                                Math.abs(speed - mam.speed)) + 1)));
+                unit.add(new Herbivorous(rand.nextBoolean(),(int)(maxHp * 0.75
+                        + rand.nextInt((int) Math.abs(maxHp - mam.maxHp) + 1)), (int)(x + 15),
+                        (int)(y + 15), speed * 0.7 + rand.nextInt((int)(Math.abs(speed - mam.speed)) + 1)));
             }
         }
         else if (enemy(unit) != null) {
@@ -41,9 +42,9 @@ public class Herbivorous extends Animals {
         int delta = Integer.MAX_VALUE;
         Beings searching = null;
         for(Beings temp: unit){
-            if(temp.getClass().equals(searchingClass) && (int)(Math.sqrt(Math.pow(x - temp.x, 2) + Math.pow(y - temp.y, 2))) < delta
-                && (searchingClass.equals(Plants.class) || searchingClass.equals(Carnivorous.class) && temp.currentHp * 1.5
-                > currentHp)) {
+            if(temp.getClass().equals(searchingClass) && (int)(Math.sqrt(Math.pow(x - temp.x, 2)
+                    + Math.pow(y - temp.y, 2))) < delta && (searchingClass.equals(Plants.class)
+                    || searchingClass.equals(Carnivorous.class) && temp.currentHp * 1.5 > currentHp)) {
                 delta = (int)Math.sqrt(Math.pow(x - temp.x, 2) + Math.pow(y - temp.y, 2));
                 searching = temp;
             }
@@ -66,7 +67,7 @@ public class Herbivorous extends Animals {
         final double cos = (enemy.x - x)/ distance;
         x -= 1.4 * speed * cos;
         y -= 1.4 * speed * sin;
-        currentHp -= 0.01;
+        currentHp -= currentHp * 0.01;
         if(Math.abs(x - enemy.x) <= 1 && Math.abs(y - enemy.y) <= 1){
             live = false;
         }
@@ -80,9 +81,14 @@ public class Herbivorous extends Animals {
             final double cos = (temp.x - x) / distance;
             x += 1.2 * speed * cos;
             y += 1.2 * speed * sin;
-            currentHp -= 0.005;
+            currentHp -= currentHp * 0.005;
             if (Math.abs(x - temp.x) <= currentHp && Math.abs(y - temp.y) <= currentHp) {
-                currentHp += temp.currentHp;
+                if(currentHp + temp.currentHp > maxHp){
+                    currentHp = maxHp;
+                }
+                else {
+                    currentHp += temp.currentHp;
+                }
                 temp.currentHp = 0;
             }
         }
@@ -91,13 +97,14 @@ public class Herbivorous extends Animals {
         }
     }
 
+    @Override
     public boolean live(Set<Beings> unit){
         Random rand = new Random();
         check();
 
-        currentHp -= 0.001;
+        currentHp -= currentHp * 0.001;
         age += 0.002;
-        if(currentHp <= 0){
+        if(currentHp <= 0.00001){
             return false;
         }
         else if(rand.nextInt((int)age * 100 + 1) == 500){
@@ -107,10 +114,10 @@ public class Herbivorous extends Animals {
             escape(unit);
             return live;
         }
-        else if(currentHp < maxHp * 0.7){
+        else if(currentHp < maxHp * 0.68){
             hunger(unit);
         }
-        else if(currentHp >= maxHp * 0.5 && age >= 0.5 && age <= 0.6 && count < 4){
+        else if(currentHp >= maxHp * 0.5 && age >= 0.5 && age <= 0.604 && count < 4){
             reproduction(unit);
         }
         else {

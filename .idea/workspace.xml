@@ -3,8 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="88a832b4-3cbd-4dc9-8d08-08a34fc86188" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Beings/Animals.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Beings/Animals.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Beings/Beings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Beings/Beings.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Beings/Carnivorous.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Beings/Carnivorous.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Beings/Herbivorous.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Beings/Herbivorous.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Beings/Plants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Beings/Plants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/Main.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="C:\Stud\Java\OOP\OOP_kurs\.idea\shelf/" />
@@ -23,12 +27,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Beings/Herbivorous.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="25" column="85" selection-start-line="25" selection-start-column="85" selection-end-line="25" selection-end-column="85" />
+            <state relative-caret-position="68">
+              <caret line="88" column="22" lean-forward="true" selection-start-line="88" selection-start-column="22" selection-end-line="88" selection-end-column="22" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#187#188#0" expanded="true" />
-                <element signature="e#234#235#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -37,8 +39,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Beings/Plants.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-34">
-              <caret line="19" column="21" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="21" />
+            <state relative-caret-position="99">
+              <caret line="15" column="30" selection-start-line="15" selection-start-column="30" selection-end-line="15" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -46,8 +48,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Beings/Animals.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-54">
-              <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+            <state relative-caret-position="238">
+              <caret line="26" column="67" selection-start-line="26" selection-start-column="67" selection-end-line="26" selection-end-column="67" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -58,12 +60,10 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Beings/Carnivorous.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-34">
-              <caret line="37" column="63" selection-start-line="37" selection-start-column="62" selection-end-line="37" selection-end-column="63" />
+            <state relative-caret-position="204">
+              <caret line="74" column="49" selection-start-line="74" selection-start-column="49" selection-end-line="74" selection-end-column="49" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#185#186#0" expanded="true" />
-                <element signature="e#232#233#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -72,16 +72,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Beings/Beings.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-102">
-              <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
-              <folding>
-                <element signature="e#1633#1634#0" expanded="true" />
-                <element signature="e#1660#1661#0" expanded="true" />
-                <element signature="e#1684#1685#0" expanded="true" />
-                <element signature="e#1713#1714#0" expanded="true" />
-                <element signature="e#1737#1738#0" expanded="true" />
-                <element signature="e#1766#1767#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="561">
+              <caret line="59" column="5" selection-start-line="59" selection-start-column="5" selection-end-line="59" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -89,12 +81,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Main/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1156">
-              <caret line="68" column="40" selection-start-line="68" selection-start-column="40" selection-end-line="68" selection-end-column="40" />
+            <state relative-caret-position="187">
+              <caret line="50" column="22" selection-start-line="50" selection-start-column="22" selection-end-line="50" selection-end-column="22" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#552#1442#0" expanded="true" />
-                <element signature="e#1441#1442#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -117,10 +107,10 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/Beings.java" />
-        <option value="$PROJECT_DIR$/src/Beings/Plants.java" />
+        <option value="$PROJECT_DIR$/src/Beings/Animals.java" />
         <option value="$PROJECT_DIR$/src/Beings/Beings.java" />
         <option value="$PROJECT_DIR$/src/Main/Main.java" />
-        <option value="$PROJECT_DIR$/src/Beings/Animals.java" />
+        <option value="$PROJECT_DIR$/src/Beings/Plants.java" />
         <option value="$PROJECT_DIR$/src/Beings/Herbivorous.java" />
         <option value="$PROJECT_DIR$/src/Beings/Carnivorous.java" />
       </list>
@@ -139,7 +129,6 @@
     <panes>
       <pane id="Scope" />
       <pane id="Course" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -168,6 +157,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -427,14 +417,37 @@
       <option name="project" value="LOCAL" />
       <updated>1570881030361</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="Fixed speed and maxHp">
+      <created>1570882806949</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1570882806949</updated>
+    </task>
+    <task id="LOCAL-00032" summary="Make balance and overrated search">
+      <created>1570887513171</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1570887513171</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23567393" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23890235" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -442,12 +455,12 @@
       <window_info id="Capture Tool" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.329806" />
       <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3227513" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39858907" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.329806" />
       <window_info anchor="bottom" id="Educational.CheckDetails" order="7" />
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" weight="0.3289689" />
@@ -481,8 +494,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Completed class of herbivores" />
-    <MESSAGE value="Update modification method live" />
     <MESSAGE value="Realise graphics" />
     <MESSAGE value="Some bug fix" />
     <MESSAGE value="Add check function" />
@@ -506,74 +517,62 @@
     <MESSAGE value="New start number unit" />
     <MESSAGE value="New movement" />
     <MESSAGE value="Recreate random" />
-    <option name="LAST_COMMIT_MESSAGE" value="Recreate random" />
+    <MESSAGE value="Fixed speed and maxHp" />
+    <MESSAGE value="Make balance and overrated search" />
+    <option name="LAST_COMMIT_MESSAGE" value="Make balance and overrated search" />
   </component>
   <component name="editorHistoryManager">
     <entry file="jar://D:/jdk-12.0.1/lib/src.zip!/java.base/java/util/ArrayDeque.java" />
-    <entry file="file://$PROJECT_DIR$/src/Beings/Plants.java">
+    <entry file="file://$PROJECT_DIR$/src/Beings/Beings.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-34">
-          <caret line="19" column="21" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="21" />
+        <state relative-caret-position="561">
+          <caret line="59" column="5" selection-start-line="59" selection-start-column="5" selection-end-line="59" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Main/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1156">
-          <caret line="68" column="40" selection-start-line="68" selection-start-column="40" selection-end-line="68" selection-end-column="40" />
+        <state relative-caret-position="187">
+          <caret line="50" column="22" selection-start-line="50" selection-start-column="22" selection-end-line="50" selection-end-column="22" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#552#1442#0" expanded="true" />
-            <element signature="e#1441#1442#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Beings/Beings.java">
+    <entry file="file://$PROJECT_DIR$/src/Beings/Plants.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-102">
-          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+        <state relative-caret-position="99">
+          <caret line="15" column="30" selection-start-line="15" selection-start-column="30" selection-end-line="15" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Beings/Herbivorous.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="88" column="22" lean-forward="true" selection-start-line="88" selection-start-column="22" selection-end-line="88" selection-end-column="22" />
           <folding>
-            <element signature="e#1633#1634#0" expanded="true" />
-            <element signature="e#1660#1661#0" expanded="true" />
-            <element signature="e#1684#1685#0" expanded="true" />
-            <element signature="e#1713#1714#0" expanded="true" />
-            <element signature="e#1737#1738#0" expanded="true" />
-            <element signature="e#1766#1767#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Beings/Animals.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-54">
-          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+        <state relative-caret-position="238">
+          <caret line="26" column="67" selection-start-line="26" selection-start-column="67" selection-end-line="26" selection-end-column="67" />
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Beings/Herbivorous.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="25" column="85" selection-start-line="25" selection-start-column="85" selection-end-line="25" selection-end-column="85" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#187#188#0" expanded="true" />
-            <element signature="e#234#235#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Beings/Carnivorous.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-34">
-          <caret line="37" column="63" selection-start-line="37" selection-start-column="62" selection-end-line="37" selection-end-column="63" />
+        <state relative-caret-position="204">
+          <caret line="74" column="49" selection-start-line="74" selection-start-column="49" selection-end-line="74" selection-end-column="49" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#185#186#0" expanded="true" />
-            <element signature="e#232#233#0" expanded="true" />
           </folding>
         </state>
       </provider>

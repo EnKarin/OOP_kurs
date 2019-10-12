@@ -15,8 +15,8 @@ public class Carnivorous extends Animals{
         int delta = Integer.MAX_VALUE;
         Beings searching = null;
         for(Beings temp: unit){
-            if(temp.getClass().equals(searchingClass) && (int)(Math.sqrt(Math.pow(x - temp.x, 2) + Math.pow(y - temp.y, 2))) < delta
-                    && temp.currentHp < currentHp) {
+            if(temp.getClass().equals(searchingClass) && (int)(Math.sqrt(Math.pow(x - temp.x, 2) +
+                    Math.pow(y - temp.y, 2))) < delta && temp.currentHp <= currentHp) {
                 delta = (int)Math.sqrt(Math.pow(x - temp.x, 2) + Math.pow(y - temp.y, 2));
                 searching = temp;
             }
@@ -24,6 +24,7 @@ public class Carnivorous extends Animals{
         return searching;
     }
 
+    @Override
     void reproduction(Set<Beings> unit){ //размножение хищников
         Random rand = new Random();
         final Carnivorous mam = (Carnivorous) searchPartner(unit, Carnivorous.class);
@@ -36,9 +37,9 @@ public class Carnivorous extends Animals{
             if (Math.abs(x - mam.x) <= 3 && Math.abs(y - mam.y) <= 3) {
                 count++;
                 currentHp -= currentHp * 0.15;
-                unit.add(new Carnivorous(rand.nextBoolean(),(int)(maxHp * 0.75 + rand.nextInt((int) Math.abs(maxHp
-                        - mam.maxHp) + 1)), (int)(x + 15), (int)(y + 15), speed * 0.7 + rand.nextInt((int)(Math.abs(speed
-                        - mam.speed)) + 1)));
+                unit.add(new Carnivorous(rand.nextBoolean(),(int)(maxHp * 0.75
+                        + rand.nextInt((int) Math.abs(maxHp - mam.maxHp) + 1)), (int)(x + 15), (int)(y + 15),
+                        speed * 0.7 + rand.nextInt((int)(Math.abs(speed - mam.speed)) + 1)));
             }
         }
         else {
@@ -65,9 +66,14 @@ public class Carnivorous extends Animals{
             final double cos = (hunger.x - x) / distance;
             x += 1.3 * speed * cos;
             y += 1.3 * speed * sin;
-            currentHp -= 0.002;
+            currentHp -= currentHp * 0.002;
             if(Math.abs(x - hunger.x) <= 3 && Math.abs(y - hunger.y) <= 3){
-                currentHp += hunger.currentHp* 0.8;
+                if(currentHp + hunger.currentHp > maxHp){
+                    currentHp = maxHp;
+                }
+                else {
+                    currentHp += hunger.currentHp;
+                }
                 hunger.currentHp = 0;
             }
         }
@@ -76,13 +82,14 @@ public class Carnivorous extends Animals{
         }
     }
 
+    @Override
     public boolean live(Set<Beings> unit){
         Random rand = new Random();
         check();
 
-        currentHp -= 0.001;
+        currentHp -= currentHp * 0.002;
         age += 0.002;
-        if(currentHp <= 0){
+        if(currentHp <= 0.0001){
             return false;
         }
         else if(rand.nextInt((int)age * 100 + 1) == 500){

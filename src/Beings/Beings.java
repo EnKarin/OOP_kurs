@@ -58,8 +58,4 @@ public abstract class Beings {
     public double getCurrentHp(){
         return currentHp;
     }
-
-    public double getMaxHp(){return maxHp;}
-
-    public double getAge(){return age;}
 }

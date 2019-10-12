@@ -48,7 +48,7 @@ public class Main extends JFrame{
             }
         });
         while (true){
-            repaint(16, 0, 0, getWidth(), getHeight());
+            repaint(32, 0, 0, getWidth(), getHeight());
             if (set.size() == 0){
                 break;
             }
@@ -61,20 +61,21 @@ public class Main extends JFrame{
         Random num = new Random();
         num.setSeed(600);
         rand.setSeed(2);
-        for(int i = 0, r = num.nextInt(1000); i < r; i++){
-            set.add(new Plants(new Random().nextBoolean(), rand.nextInt(35), rand.nextInt(3000), rand.nextInt(3000)));
+        for(int i = 0, r = num.nextInt(950); i < r; i++){
+            set.add(new Plants(new Random().nextBoolean(), rand.nextInt(35), rand.nextInt(3000),
+                    rand.nextInt(3000)));
         }
         num.setSeed(200);
         rand.setSeed(5);
         for(int i = 0, r = num.nextInt(320); i < r; i++){
-            set.add(new Herbivorous(new Random().nextBoolean(), rand.nextInt(40), rand.nextInt(3000), rand.nextInt(3000),
-                    rand.nextDouble() * 5 + 1));
+            set.add(new Herbivorous(new Random().nextBoolean(), rand.nextInt(40), rand.nextInt(3000),
+                    rand.nextInt(3000), rand.nextDouble() * 5 + 1));
         }
         rand.setSeed(8);
         num.setSeed(110);
         for(int i = 0, r = num.nextInt(140); i < r; i++){
-            set.add(new Carnivorous(new Random().nextBoolean(), rand.nextInt(60), rand.nextInt(3000), rand.nextInt(3000),
-                    rand.nextDouble() * 6 + 2));
+            set.add(new Carnivorous(new Random().nextBoolean(), rand.nextInt(60), rand.nextInt(3000),
+                    rand.nextInt(3000), rand.nextDouble() * 6 + 2));
         }
 
         new Main();
