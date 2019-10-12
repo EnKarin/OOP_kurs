@@ -52,12 +52,6 @@ public class Main extends JFrame{
         }
     }
 
-    /*@Override
-    public void paint(Graphics g) {
-        super.paint(g);
-    }
-     */
-
     public static void main(String[] args) {
         Random rand = new Random();
         rand.setSeed(2);
@@ -92,26 +86,24 @@ class Panel extends JPanel{
         y = yWindow;
     }
 
-    JPanel getPanel(){ return this;}
-
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
         if(x == 0){
             g.setColor(red);
-            g.drawLine(10, 0, 10, getHeight());
+            g.drawLine(1, 0, 1, getHeight());
         }
         else if(x > 1630){
             g.setColor(red);
-            g.drawLine(getWidth() - 10, 0, getWidth() - 10, getHeight());
+            g.drawLine(getWidth() - 1, 0, getWidth() - 1, getHeight());
         }
         if(y == 0){
             g.setColor(red);
-            g.drawLine(1, 33, getWidth() - 1, 33);
+            g.drawLine(1, 1, getWidth() - 1, 1);
         }
         else if(y > 2273){
             g.setColor(red);
-            g.drawLine(0, getHeight() - 10 ,getWidth(), getHeight() - 10);
+            g.drawLine(0, getHeight() - 1 ,getWidth(), getHeight() - 1);
         }
         for(Beings temp: set){
             if(!temp.live(set)){
