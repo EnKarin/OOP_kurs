@@ -61,8 +61,8 @@ public class Main extends JFrame{
         Random num = new Random();
         num.setSeed(600);
         rand.setSeed(2);
-        for(int i = 0, r = num.nextInt(950); i < r; i++){
-            set.add(new Plants(new Random().nextBoolean(), rand.nextInt(35), rand.nextInt(3000),
+        for(int i = 0, r = num.nextInt(900); i < r; i++){
+            set.add(new Plants(new Random().nextBoolean(), rand.nextInt(30), rand.nextInt(3000),
                     rand.nextInt(3000)));
         }
         num.setSeed(200);
@@ -71,7 +71,7 @@ public class Main extends JFrame{
             set.add(new Herbivorous(new Random().nextBoolean(), rand.nextInt(40), rand.nextInt(3000),
                     rand.nextInt(3000), rand.nextDouble() * 5 + 1));
         }
-        rand.setSeed(8);
+        rand.setSeed(10);
         num.setSeed(110);
         for(int i = 0, r = num.nextInt(140); i < r; i++){
             set.add(new Carnivorous(new Random().nextBoolean(), rand.nextInt(60), rand.nextInt(3000),
