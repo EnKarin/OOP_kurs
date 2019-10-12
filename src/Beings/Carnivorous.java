@@ -87,7 +87,7 @@ public class Carnivorous extends Animals{
         Random rand = new Random();
         check();
 
-        currentHp -= currentHp * 0.003;
+        currentHp -= maxHp * 0.0002;
         age += 0.002;
         if(currentHp <= 0.0001){
             return false;
@@ -98,7 +98,7 @@ public class Carnivorous extends Animals{
         else if(currentHp < maxHp * 0.7){
             pursuit(unit);
         }
-        else if(currentHp >= maxHp * 0.5 && age >= 0.5 && age <= 0.61 && count < 3){
+        else if(currentHp >= maxHp * 0.5 && age >= 1.5 && age <= 1.7 && count < 2){
             reproduction(unit);
         }
         else {

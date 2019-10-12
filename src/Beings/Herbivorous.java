@@ -102,7 +102,7 @@ public class Herbivorous extends Animals {
         Random rand = new Random();
         check();
 
-        currentHp -= currentHp * 0.001;
+        currentHp -= maxHp * 0.0002;
         age += 0.002;
         if(currentHp <= 0.00001){
             return false;
@@ -117,7 +117,7 @@ public class Herbivorous extends Animals {
         else if(currentHp < maxHp * 0.6){
             hunger(unit);
         }
-        else if(currentHp >= maxHp * 0.6 && age >= 0.5 && age <= 0.6 && count < 4){
+        else if(currentHp >= maxHp * 0.6 && age >= 0.5 && age <= 0.6 && count < 2){
             reproduction(unit);
         }
         else {
