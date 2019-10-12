@@ -8,7 +8,6 @@ abstract class Animals extends Beings {
     double speed;
     boolean live = true;
     private double globalSin = 0, globalCos = 0;
-    final Random rand = new Random();
 
     Animals(boolean male, double maxHp, int x, int y, double speed) {
         super(male, maxHp, x, y);

@@ -1,5 +1,6 @@
 package Beings;
 
+import java.util.Random;
 import java.util.Set;
 
 public class Carnivorous extends Animals{
@@ -10,6 +11,7 @@ public class Carnivorous extends Animals{
     }
 
     void reproduction(Set<Beings> unit){ //размножение хищников
+        Random rand = new Random();
         final Carnivorous mam = (Carnivorous) searchPartner(unit, Carnivorous.class);
         if(mam != null) {
             int distance = (int) Math.sqrt(Math.pow(x - mam.x, 2) + Math.pow(y - mam.y, 2));
@@ -64,7 +66,9 @@ public class Carnivorous extends Animals{
     }
 
     public boolean live(Set<Beings> unit){
+        Random rand = new Random();
         check();
+
         currentHp -= 0.001;
         age += 0.002;
         if(currentHp <= 0){
