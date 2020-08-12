@@ -15,8 +15,9 @@ public class Carnivorous extends Animals{
         int delta = Integer.MAX_VALUE;
         Beings searching = null;
         for(Beings temp: unit){
-            if(temp.getClass().equals(searchingClass) && (int)(Math.sqrt(Math.pow(x - temp.x, 2) +
-                    Math.pow(y - temp.y, 2))) < delta && temp.currentHp <= currentHp) {
+            if(temp.getClass().equals(searchingClass) &&
+                    (int)(Math.sqrt(Math.pow(x - temp.x, 2) + Math.pow(y - temp.y, 2))) < delta &&
+                    (temp.currentHp <= currentHp || searchingClass.equals(Carnivorous.class))) { // last update
                 delta = (int)Math.sqrt(Math.pow(x - temp.x, 2) + Math.pow(y - temp.y, 2));
                 searching = temp;
             }
